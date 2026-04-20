@@ -7,7 +7,7 @@
 <title>Josh Manalo | Fullstack Developer</title>
 
 <!-- Favicon -->
-<link rel="icon" href="/image/favicon.ico" sizes="any">
+<link rel="icon" href="image/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -72,6 +72,65 @@
 .text-accent { color: var(--accent-text) !important; }
 .c-section-label { color: var(--accent-text) !important; }
 .c-section-label::before { background: var(--accent-text) !important; }
+
+<style id="project-enhancements">
+.tech-stack-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:4px;
+  margin-bottom:14px;
+}
+.tech-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  border:1px solid rgba(255,219,137,0.18);
+  background:rgba(255,255,255,0.04);
+  overflow:hidden;
+  transition:transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.tech-icon:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,219,137,0.42);
+  background:rgba(255,219,137,0.08);
+}
+.tech-icon img{
+  width:20px;
+  height:20px;
+  object-fit:contain;
+  display:block;
+}
+.modal-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.c-btn-github{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:transparent;
+  color:#f6e7bd;
+  font-family:'Syne',sans-serif;
+  font-size:0.85rem;
+  font-weight:700;
+  padding:0.65rem 1.2rem;
+  border-radius:10px;
+  text-decoration:none;
+  border:1px solid rgba(255,219,137,0.24);
+  transition:background 0.2s, transform 0.15s, border-color 0.2s;
+}
+.c-btn-github:hover{
+  background:rgba(255,219,137,0.08);
+  border-color:rgba(255,219,137,0.42);
+  transform:translateY(-1px);
+}
 </style>
   <link rel="stylesheet" href="contrast-fix.css"/>
 
@@ -395,25 +454,32 @@
         </div>
       </div>
 
-      <!-- Project Card 3 -->
-      <a href="projects/primestates/index.html" target="_blank" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
+      <!-- Project Card 3 — PrimeEstates -->
+      <div onclick="openPrimeModal()" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
         <div class="relative overflow-hidden" style="aspect-ratio: 16/9; background: var(--bg3);">
-          <div class="absolute inset-0 flex items-center justify-center" style="color: var(--muted);">
-            <svg class="w-10 h-10 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5a2.25 2.25 0 002.25-2.25V5.25a2.25 2.25 0 00-2.25-2.25H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
+          <img src="image/primeestates.png" aria-hidden="true"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter: blur(8px); transform: scale(1.08); opacity: 0.5;">
+        <img src="image/primeestates.png" alt="PrimeEstates"
+          class="absolute inset-0 w-full h-full"
+          style="object-fit: contain; object-position: center;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5a2.25 2.25 0 002.25-2.25V5.25a2.25 2.25 0 00-2.25-2.25H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/>
+            </svg>
           </div>
-          <!-- Replace with: <img src="project3.jpg" alt="Project Name" class="w-full h-full object-cover"> -->
         </div>
         <div class="p-5">
           <div class="flex items-center justify-between mb-2">
-            <h3 class="font-sans text-base font-bold" style="color: var(--text);">Project Name</h3>
-            <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="color: var(--accent);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+            <h3 class="font-sans text-base font-bold" style="color: var(--text);">PrimeEstates</h3>
+            <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="color: var(--accent);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/>
+            </svg>
           </div>
-          <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">Short description of what this project does and what problem it solves. Replace with your own text.</p>
+          <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">A modern real estate website concept for showcasing property listings, featured homes, and a clean browsing experience for potential buyers.</p>
           <div class="flex flex-wrap gap-2">
-            <span class="c-tag">React</span><span class="c-tag">Node.js</span><span class="c-tag">MongoDB</span>
+            <span class="c-tag">HTML</span><span class="c-tag">CSS</span><span class="c-tag">JavaScript</span>
           </div>
         </div>
-      </a>
+      </div>
 
     </div>
   </section>
@@ -786,7 +852,7 @@
 
     <!-- Modal Box -->
     <div id="kape-modal-box"
-      style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px); opacity:0; transition:transform 0.32s cubic-bezier(.22,1,.36,1), opacity 0.28s ease;">
+      style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
       <!-- Close Button -->
       <button onclick="closeKapeModal()" aria-label="Close modal"
@@ -826,11 +892,16 @@
           </p>
         </div>
 
-        <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1.6rem;">A modern Filipino cafe website featuring a multi-page layout with menu showcase, gallery, reservation form, and smooth animations — built with HTML, CSS, and vanilla JavaScript.</p>
+        <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1rem;">A modern Filipino cafe website featuring a multi-page layout with menu showcase, gallery, reservation form, and smooth animations — built with HTML, CSS, and vanilla JavaScript.</p>
 
-        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-          <!-- View Live Demo button -->
-          <a href="projects/kape_ni_lola/index.html" target="_blank" rel="noopener"
+        <div class="tech-stack-row" aria-label="Kape Ni Lola tech stack">
+          <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html" alt="HTML5 icon"></span>
+          <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css" alt="CSS3 icon"></span>
+          <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript icon"></span>
+        </div>
+
+        <div class="modal-actions">
+          <a href="https://jmdmanalo2222.github.io/kape-ni-lola/" target="_blank" rel="noopener"
             style="display:inline-flex; align-items:center; gap:8px; background:#ffdb89; color:#1a1200; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
             onmouseover="this.style.background='#f4ca66'; this.style.transform='translateY(-1px)'"
             onmouseout="this.style.background='#ffdb89'; this.style.transform='translateY(0)'">
@@ -838,7 +909,11 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
           </a>
 
-          <!-- Tech tags -->
+          <a href="https://github.com/jmdmanalo2222" target="_blank" rel="noopener" class="c-btn-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View GitHub
+          </a>
+
           <span style="font-size:0.72rem; color:#6e5e48; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
         </div>
       </div>
@@ -855,7 +930,7 @@
 
   <!-- Modal Box -->
   <div id="byte-modal-box"
-    style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px); opacity:0; transition:transform 0.32s cubic-bezier(.22,1,.36,1), opacity 0.28s ease;">
+    style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
     <!-- Close Button -->
     <button onclick="closeByteModal()" aria-label="Close modal"
@@ -890,21 +965,102 @@
         </p>
       </div>
 
-      <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1.6rem;">A full-stack e-commerce store for tech products — featuring product listings, a shopping cart system, and an admin dashboard, built with PHP, MySQL, and Tailwind CSS.</p>
+      <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1rem;">A full-stack e-commerce store for tech products — featuring product listings, a shopping cart system, and an admin dashboard, built with PHP, MySQL, and Tailwind CSS.</p>
 
-      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <a href="projects/bytestore/index.html" target="_blank" rel="noopener"
+      <div class="tech-stack-row" aria-label="ByteStore tech stack">
+        <span class="tech-icon" title="PHP"><img src="https://skillicons.dev/icons?i=php" alt="PHP icon"></span>
+        <span class="tech-icon" title="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL icon"></span>
+        <span class="tech-icon" title="Tailwind CSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS icon"></span>
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://jmdmanalo2222.github.io/bytestore/" target="_blank" rel="noopener"
           style="display:inline-flex; align-items:center; gap:8px; background:#ffdb89; color:#1a1200; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
           onmouseover="this.style.background='#f4ca66'; this.style.transform='translateY(-1px)'"
           onmouseout="this.style.background='#ffdb89'; this.style.transform='translateY(0)'">
           View Live Demo
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
         </a>
+
+        <a href="https://github.com/jmdmanalo2222" target="_blank" rel="noopener" class="c-btn-github">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View GitHub
+        </a>
+
         <span style="font-size:0.72rem; color:#6e5e48; font-family:'DM Mono',monospace;">PHP &middot; MySQL &middot; Tailwind</span>
       </div>
     </div>
   </div>
 </div>
+
+  <!-- ===== PRIMEESTATES MODAL ===== -->
+  <div id="prime-modal" role="dialog" aria-modal="true" aria-labelledby="prime-modal-title"
+    style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1rem;"
+    onclick="handlePrimeModalBackdropClick(event)">
+
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
+
+    <div id="prime-modal-box"
+      style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+
+      <button onclick="closePrimeModal()" aria-label="Close modal"
+        style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f6e7bd; transition:background 0.2s;"
+        onmouseover="this.style.background='rgba(255,219,137,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#141414; position:relative;">
+        <img src="image/primeestates.png" aria-hidden="true"
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5;">
+        <img src="image/primeestates.png" alt="PrimeEstates Preview"
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center;">
+          <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.41a2.25 2.25 0 013.182 0l2.909 2.91M3.75 21h16.5a2.25 2.25 0 002.25-2.25V5.25a2.25 2.25 0 00-2.25-2.25H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div style="padding:1.75rem 2rem 2rem;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#F2921D; background:rgba(242,146,29,0.12); border:1px solid rgba(242,146,29,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
+          Demo Project
+        </span>
+
+        <h2 id="prime-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f6e7bd; margin:0 0 0.6rem;">PrimeEstates</h2>
+
+        <div style="background:rgba(255,219,137,0.06); border-left:3px solid rgba(255,219,137,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+          <p style="font-size:0.82rem; line-height:1.65; color:#c9b99a; margin:0;">
+            <strong style="color:#ffdb89;">Heads up —</strong> this is a portfolio demo project built to showcase a clean real estate layout and browsing experience. It is not a live property marketplace and its listings and inquiry flows are for presentation purposes.
+          </p>
+        </div>
+
+        <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1rem;">A modern real estate website concept designed to present featured homes, property listings, and a polished user experience for buyers exploring residential spaces online.</p>
+
+        <div class="tech-stack-row" aria-label="PrimeEstates tech stack">
+          <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html" alt="HTML5 icon"></span>
+          <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css" alt="CSS3 icon"></span>
+          <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript icon"></span>
+        </div>
+
+        <div class="modal-actions">
+          <a href="https://jmdmanalo2222.github.io/primeestates/" target="_blank" rel="noopener"
+            style="display:inline-flex; align-items:center; gap:8px; background:#ffdb89; color:#1a1200; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+            onmouseover="this.style.background='#f4ca66'; this.style.transform='translateY(-1px)'"
+            onmouseout="this.style.background='#ffdb89'; this.style.transform='translateY(0)'">
+            View Live Demo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+          </a>
+
+          <a href="https://github.com/jmdmanalo2222" target="_blank" rel="noopener" class="c-btn-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View GitHub
+          </a>
+
+          <span style="font-size:0.72rem; color:#6e5e48; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     // ---- Kape Ni Lola Modal Logic ----
@@ -920,8 +1076,9 @@
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(function() {
         requestAnimationFrame(function() {
-          box.style.transform = 'translateY(0)';
+          box.style.transform = 'translateY(0) scale(1)';
           box.style.opacity   = '1';
+          box.style.filter    = 'blur(0)';
         });
       });
     }
@@ -929,8 +1086,9 @@
     function closeKapeModal() {
       var modal = document.getElementById('kape-modal');
       var box   = document.getElementById('kape-modal-box');
-      box.style.transform = 'translateY(24px)';
+      box.style.transform = 'translateY(24px) scale(0.96)';
       box.style.opacity   = '0';
+      box.style.filter    = 'blur(12px)';
       setTimeout(function() {
         modal.style.display = 'none';
         document.body.style.overflow = '';
@@ -942,7 +1100,7 @@
     }
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); }
+      if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); closePrimeModal(); }
     });
   </script>
 
@@ -955,8 +1113,9 @@
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(function() {
         requestAnimationFrame(function() {
-          box.style.transform = 'translateY(0)';
+          box.style.transform = 'translateY(0) scale(1)';
           box.style.opacity   = '1';
+          box.style.filter    = 'blur(0)';
         });
       });
     }
@@ -965,8 +1124,9 @@
       var modal = document.getElementById('byte-modal');
       var box   = document.getElementById('byte-modal-box');
       if (!modal) return;
-      box.style.transform = 'translateY(24px)';
+      box.style.transform = 'translateY(24px) scale(0.96)';
       box.style.opacity   = '0';
+      box.style.filter    = 'blur(12px)';
       setTimeout(function() {
         modal.style.display = 'none';
         document.body.style.overflow = '';
@@ -979,8 +1139,42 @@
 
     // Escape key — closes whichever modal is open
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); }
+      if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); closePrimeModal(); }
     });
+  </script>
+
+  <script>
+    // ---- PrimeEstates Modal Logic ----
+    function openPrimeModal() {
+      var modal = document.getElementById('prime-modal');
+      var box   = document.getElementById('prime-modal-box');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          box.style.transform = 'translateY(0) scale(1)';
+          box.style.opacity   = '1';
+          box.style.filter    = 'blur(0)';
+        });
+      });
+    }
+
+    function closePrimeModal() {
+      var modal = document.getElementById('prime-modal');
+      var box   = document.getElementById('prime-modal-box');
+      if (!modal) return;
+      box.style.transform = 'translateY(24px) scale(0.96)';
+      box.style.opacity   = '0';
+      box.style.filter    = 'blur(12px)';
+      setTimeout(function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    function handlePrimeModalBackdropClick(e) {
+      if (e.target === document.getElementById('prime-modal')) { closePrimeModal(); }
+    }
   </script>
 
 <script data-pplx-inline-edit>
