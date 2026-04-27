@@ -50,21 +50,35 @@
 
   <link rel="stylesheet" href="css/style.css"/>
 
-<style id="contrast-fix">
-/*
- * CONTRAST FIX — accent colors as text in light mode
- * --accent (#ffdb89) and --accent-strong (#e2b955) are
- * unreadable on cream bg (~1.2-1.7:1). Fix: use deep amber.
- */
-:root, [data-theme="dark"] {
-  --accent-text:        #ffdb89;
-  --accent-strong-text: #f4ca66;
-  --accent-soft-text:   #f2dfae;
-}
+<style id="theme-variables">
+/* ─── THEME VARIABLES ─── */
 [data-theme="light"] {
-  --accent-text:        #7a5500;   /* 6.3:1 contrast on cream — WCAG AA */
-  --accent-strong-text: #6b4c00;   /* 7.4:1 contrast on cream — WCAG AA */
-  --accent-soft-text:   #3a352d;
+  --bg:            #f0eeeb;
+  --bg2:           #e5e2de;
+  --bg3:           #dbd8d4;
+  --text:          #1a1714;
+  --muted:         #6a6560;
+  --accent:        #8b1c2a;
+  --accent-strong: #6b0f1a;
+  --accent-soft:   #a85a6a;
+  --border:        #d5d0cb;
+  --accent-text:        #8b1c2a;
+  --accent-strong-text: #6b0f1a;
+  --accent-soft-text:   #5a3a42;
+}
+[data-theme="dark"] {
+  --bg:            #0c0808;
+  --bg2:           #161010;
+  --bg3:           #201818;
+  --text:          #f0e8e0;
+  --muted:         #a89888;
+  --accent:        #c41e3a;
+  --accent-strong: #e85d75;
+  --accent-soft:   #8b1c2a;
+  --border:        #2a2020;
+  --accent-text:        #e85d75;
+  --accent-strong-text: #ff9aaa;
+  --accent-soft-text:   #c9a0a0;
 }
 [style*="color: var(--accent)"]        { color: var(--accent-text) !important; }
 [style*="color: var(--accent-strong)"] { color: var(--accent-strong-text) !important; }
@@ -72,6 +86,7 @@
 .text-accent { color: var(--accent-text) !important; }
 .c-section-label { color: var(--accent-text) !important; }
 .c-section-label::before { background: var(--accent-text) !important; }
+</style>
 
 <style id="project-enhancements">
 .tech-stack-row{
@@ -89,15 +104,15 @@
   width:34px;
   height:34px;
   border-radius:10px;
-  border:1px solid rgba(255,219,137,0.18);
+  border:1px solid rgba(196,30,58,0.18);
   background:rgba(255,255,255,0.04);
   overflow:hidden;
   transition:transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 .tech-icon:hover{
   transform:translateY(-2px);
-  border-color:rgba(255,219,137,0.42);
-  background:rgba(255,219,137,0.08);
+  border-color:rgba(196,30,58,0.42);
+  background:rgba(196,30,58,0.08);
 }
 .tech-icon img{
   width:20px;
@@ -116,24 +131,67 @@
   align-items:center;
   gap:8px;
   background:transparent;
-  color:#f6e7bd;
+  color:#f0e8e0;
   font-family:'Syne',sans-serif;
   font-size:0.85rem;
   font-weight:700;
   padding:0.65rem 1.2rem;
   border-radius:10px;
   text-decoration:none;
-  border:1px solid rgba(255,219,137,0.24);
+  border:1px solid rgba(196,30,58,0.24);
   transition:background 0.2s, transform 0.15s, border-color 0.2s;
 }
 .c-btn-github:hover{
-  background:rgba(255,219,137,0.08);
-  border-color:rgba(255,219,137,0.42);
+  background:rgba(196,30,58,0.08);
+  border-color:rgba(196,30,58,0.42);
   transform:translateY(-1px);
 }
-</style>
-  <link rel="stylesheet" href="contrast-fix.css"/>
 
+/* ─── PORTRAIT STYLES ─── */
+.hero-portrait-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 4/5;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+}
+[data-theme="light"] .hero-portrait-wrap {
+  box-shadow: 0 24px 60px rgba(26,23,20,0.15);
+}
+.hero-portrait-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+[data-theme="dark"] .portrait-light,
+[data-theme="light"] .portrait-dark {
+  display: none !important;
+}
+.portrait-border-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-soft), transparent 40%, transparent 60%, var(--accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  pointer-events: none;
+}
+[data-theme="light"] .portrait-border-glow {
+  opacity: 0.35;
+}
+</style>
+
+  <link rel="stylesheet" href="contrast-fix.css"/>
 
 </head>
 <body class="antialiased">
@@ -178,7 +236,7 @@
       <li><a href="#contact" class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">Contact</a></li>
     </ul>
     <div class="mt-12">
-      <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link" class="c-btn-primary">
+      <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link " class="c-btn-primary">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
         Download CV
       </a>
@@ -186,45 +244,56 @@
   </div>
 
 <!-- HERO -->
-  <section class="min-h-screen flex flex-col justify-center px-[6vw] pt-40 pb-24 relative overflow-hidden" id="home">
+  <section class="min-h-screen flex flex-col lg:flex-row justify-center items-center px-[6vw] pt-40 pb-24 relative overflow-hidden gap-12 lg:gap-8" id="home">
     <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none -top-36 -right-48" style="background: radial-gradient(circle, color-mix(in srgb, var(--accent) 12%, transparent) 0%, transparent 70%);"></div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--accent-soft), var(--accent-strong), var(--accent-soft), transparent);"></div>
 
-    <div class="inline-flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase mb-6 opacity-0 animate-[fadeUp_0.6s_0.2s_forwards]" style="color: var(--accent-soft);">
-      <span class="block w-7 h-px" style="background: var(--accent);"></span>
-      Available for freelance projects and open to work
+    <div class="flex-1 max-w-3xl">
+      <div class="inline-flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase mb-6 opacity-0 animate-[fadeUp_0.6s_0.2s_forwards]" style="color: var(--accent-soft);">
+        <span class="block w-7 h-px" style="background: var(--accent);"></span>
+        Available for freelance projects and open to work
+      </div>
+
+      <div class="font-sans text-[clamp(1rem,2vw,1.3rem)] font-semibold tracking-widest uppercase opacity-0 animate-[fadeUp_0.7s_0.28s_forwards]" style="color: var(--muted);">Josh Michael Manalo</div>
+
+      <h1 class="font-sans text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.96] tracking-tight opacity-0 animate-[fadeUp_0.7s_0.35s_forwards] mt-2">
+        <span id="typed-first" style="color: var(--text);"></span><br/>
+        <span id="typed-last" style="color: var(--accent-strong);"></span><span class="animate-blink" style="color: var(--accent-strong);">|</span>
+      </h1>
+
+      <p class="mt-8 max-w-md text-sm leading-relaxed opacity-0 animate-[fadeUp_0.7s_0.5s_forwards]" style="color: var(--muted);">
+        Full-stack web developer and SEO specialist building responsive, reliable websites that look polished, feel intuitive, and rank well in search.
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-2 opacity-0 animate-[fadeUp_0.7s_0.58s_forwards]">
+        <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">Frontend</span>
+        <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">Backend</span>
+        <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">SEO</span>
+        <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent); color: var(--text); background: var(--accent-soft);">Freelancer</span>
+        <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">Open to projects</span>
+      </div>
+
+      <div class="mt-4 flex items-center gap-2 opacity-0 animate-[fadeUp_0.7s_0.62s_forwards]">
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span class="font-mono text-xs" style="color: var(--muted);">Based in the Philippines · Remote-ready</span>
+      </div>
+
+      <div class="mt-10 flex gap-5 flex-wrap opacity-0 animate-[fadeUp_0.7s_0.65s_forwards]">
+        <a href="#contact" class="c-btn-primary">Get In Touch →</a>
+        <a href="#cv" class="c-btn-outline">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download CV
+        </a>
+      </div>
     </div>
 
-    <div class="font-sans text-[clamp(1rem,2vw,1.3rem)] font-semibold tracking-widest uppercase opacity-0 animate-[fadeUp_0.7s_0.28s_forwards]" style="color: var(--muted);">Josh Michael Manalo</div>
-
-    <h1 class="font-sans text-[clamp(3rem,9vw,7.5rem)] font-extrabold leading-[0.96] tracking-tight opacity-0 animate-[fadeUp_0.7s_0.35s_forwards] mt-2">
-      <span id="typed-first" style="color: var(--text);"></span><br/>
-      <span id="typed-last" style="color: var(--accent-strong);"></span><span class="animate-blink" style="color: var(--accent-strong);">|</span>
-    </h1>
-
-    <p class="mt-8 max-w-md text-sm leading-relaxed opacity-0 animate-[fadeUp_0.7s_0.5s_forwards]" style="color: var(--muted);">
-      Full-stack web developer and SEO specialist building responsive, reliable websites that look polished, feel intuitive, and rank well in search.
-    </p>
-
-    <div class="mt-6 flex flex-wrap gap-2 opacity-0 animate-[fadeUp_0.7s_0.58s_forwards]">
-      <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">Frontend</span>
-      <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">Backend</span>
-      <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">SEO</span>
-      <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent); color: var(--text); background: var(--accent-soft);">Freelancer</span>
-      <span class="font-mono text-xs px-3 py-1 border" style="border-color: var(--accent-soft); color: var(--accent-strong);">Open to projects</span>
-    </div>
-
-    <div class="mt-4 flex items-center gap-2 opacity-0 animate-[fadeUp_0.7s_0.62s_forwards]">
-      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: var(--accent);"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-      <span class="font-mono text-xs" style="color: var(--muted);">Based in the Philippines · Remote-ready</span>
-    </div>
-
-    <div class="mt-10 flex gap-5 flex-wrap opacity-0 animate-[fadeUp_0.7s_0.65s_forwards]">
-      <a href="#contact" class="c-btn-primary">Get In Touch →</a>
-      <a href="#cv" class="c-btn-outline">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-        Download CV
-      </a>
+    <!-- HERO PORTRAIT -->
+    <div class="hidden lg:flex items-center justify-center flex-shrink-0 opacity-0 animate-[fadeUp_0.7s_0.75s_forwards]">
+      <div class="hero-portrait-wrap">
+        <div class="portrait-border-glow"></div>
+        <img class="portrait-light" src="image/josh-grey.png" alt="Josh Manalo — Professional portrait on grey background">
+        <img class="portrait-dark" src="image/josh-red.png" alt="Josh Manalo — Professional portrait on red background">
+      </div>
     </div>
 
     <div class="absolute bottom-10 left-[6vw] flex items-center gap-3 text-xs tracking-[0.14em] uppercase opacity-0 animate-[fadeUp_0.7s_0.9s_forwards]" style="color: var(--muted);">
@@ -272,11 +341,11 @@
 
         <div class="about-actions pt-2 flex flex-wrap gap-4">
           <a href="#contact" class="c-btn-primary">Work With Me →</a>
-          <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link" class="c-btn-outline" target="_blank" rel="noopener">
+          <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link " class="c-btn-outline" target="_blank" rel="noopener">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
             Download CV
           </a>
-          <a href="https://jmdmanalo2222.github.io/dev-notes" class="c-btn-primary">Josh.Notes</a>
+          <a href="https://jmdmanalo2222.github.io/dev-notes " class="c-btn-primary">Josh.Notes</a>
         </div>
       </div>
 
@@ -547,7 +616,7 @@
             </div>
 
             <!-- Placeholder download button — update href when CV is ready -->
-            <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link" id="cv-download-btn" class="c-btn-primary" target="_blank" rel="noopener">
+            <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link " id="cv-download-btn" class="c-btn-primary" target="_blank" rel="noopener">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
               Download CV
             </a>
@@ -637,28 +706,28 @@
 
         <div class="grid grid-cols-2 gap-3">
 
-          <a href="https://mail.google.com/mail/?view=cm&to=jmdmanalo2222@gmail.com" target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
+          <a href="https://mail.google.com/mail/?view=cm&to=jmdmanalo2222@gmail.com " target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
             <div class="contact-btn-fill"></div>
             <svg class="contact-btn-icon w-6 h-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
             <span class="contact-btn-label font-mono text-xs tracking-widest uppercase relative z-10">Email</span>
             <span class="contact-btn-hint font-mono text-[10px] relative z-10">✉ Message me</span>
           </a>
 
-          <a href="https://github.com/jmdmanalo2222" target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
+          <a href="https://github.com/jmdmanalo2222 " target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
             <div class="contact-btn-fill"></div>
             <svg class="contact-btn-icon w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             <span class="contact-btn-label font-mono text-xs tracking-widest uppercase relative z-10">GitHub</span>
             <span class="contact-btn-hint font-mono text-[10px] relative z-10">👀 View my work</span>
           </a>
 
-          <a href="https://www.linkedin.com/in/josh-manalo-a2b0993b8/" target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
+          <a href="https://www.linkedin.com/in/josh-manalo-a2b0993b8/ " target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
             <div class="contact-btn-fill"></div>
             <svg class="contact-btn-icon w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             <span class="contact-btn-label font-mono text-xs tracking-widest uppercase relative z-10">LinkedIn</span>
             <span class="contact-btn-hint font-mono text-[10px] relative z-10">✔ Verify my profile</span>
           </a>
 
-          <a href="https://wa.me/639543913319" target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
+          <a href="https://wa.me/639543913319 " target="_blank" class="contact-btn relative flex flex-col items-center justify-center gap-2 py-7 border overflow-hidden" style="background: var(--bg3); border-color: var(--border);">
             <div class="contact-btn-fill"></div>
             <svg class="contact-btn-icon w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span class="contact-btn-label font-mono text-xs tracking-widest uppercase relative z-10">WhatsApp</span>
@@ -669,7 +738,7 @@
       </div>
 
       <!-- Contact Form — replace YOUR_FORM_ID with your Formspree ID -->
-      <form id="contact-form" action="https://formspree.io/f/maqandor" method="POST" class="flex flex-col gap-5">
+      <form id="contact-form" action="https://formspree.io/f/maqandor " method="POST" class="flex flex-col gap-5">
         <div class="flex flex-col gap-2">
           <label class="text-xs tracking-widest uppercase" style="color: var(--muted);">Your Name</label>
           <input type="text" name="name" required class="c-input" placeholder="Juan Dela Cruz" />
@@ -873,17 +942,17 @@
 
     <!-- Modal Box -->
     <div id="kape-modal-box"
-      style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+      style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
       <!-- Close Button -->
       <button onclick="closeKapeModal()" aria-label="Close modal"
-        style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f6e7bd; transition:background 0.2s;"
-        onmouseover="this.style.background='rgba(255,219,137,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+        style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
+        onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
       <!-- Preview Screenshot -->
-      <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#2a1f2d; position:relative;">
+      <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#1a1212; position:relative;">
         
         <!-- Blurred bg layer -->
         <img src="image/kape-ni-lola-preview.png" aria-hidden="true"
@@ -899,43 +968,43 @@
       <div style="padding:1.75rem 2rem 2rem;">
 
         <!-- Demo badge -->
-        <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#F2921D; background:rgba(242,146,29,0.12); border:1px solid rgba(242,146,29,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
           Demo Project
         </span>
 
-        <h2 id="kape-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f6e7bd; margin:0 0 0.6rem;">Kape Ni Lola</h2>
+        <h2 id="kape-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">Kape Ni Lola</h2>
 
         <!-- Disclaimer box -->
-        <div style="background:rgba(255,219,137,0.06); border-left:3px solid rgba(255,219,137,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
-          <p style="font-size:0.82rem; line-height:1.65; color:#c9b99a; margin:0;">
-            <strong style="color:#ffdb89;">Heads up —</strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the forms, reservations, or links are functional. Think of it as a design & code showcase.
+        <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+          <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
+            <strong style="color:#e85d75;">Heads up —</strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the forms, reservations, or links are functional. Think of it as a design & code showcase.
           </p>
         </div>
 
-        <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1rem;">A modern Filipino cafe website featuring a multi-page layout with menu showcase, gallery, reservation form, and smooth animations — built with HTML, CSS, and vanilla JavaScript.</p>
+        <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A modern Filipino cafe website featuring a multi-page layout with menu showcase, gallery, reservation form, and smooth animations — built with HTML, CSS, and vanilla JavaScript.</p>
 
         <div class="tech-stack-row" aria-label="Kape Ni Lola tech stack">
-          <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html" alt="HTML5 icon"></span>
-          <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css" alt="CSS3 icon"></span>
-          <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript icon"></span>
+          <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html " alt="HTML5 icon"></span>
+          <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css " alt="CSS3 icon"></span>
+          <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js " alt="JavaScript icon"></span>
         </div>
 
         <div class="modal-actions">
-          <a href="https://jmdmanalo2222.github.io/kape-ni-lola/" target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:8px; background:#ffdb89; color:#1a1200; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
-            onmouseover="this.style.background='#f4ca66'; this.style.transform='translateY(-1px)'"
-            onmouseout="this.style.background='#ffdb89'; this.style.transform='translateY(0)'">
+          <a href="https://jmdmanalo2222.github.io/kape-ni-lola/ " target="_blank" rel="noopener"
+            style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+            onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)';"
+            onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)';">
             View Live Demo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
           </a>
 
-          <a href="https://github.com/jmdmanalo2222" target="_blank" rel="noopener" class="c-btn-github">
+          <a href="https://github.com/jmdmanalo2222 " target="_blank" rel="noopener" class="c-btn-github">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             View GitHub
           </a>
 
-          <span style="font-size:0.72rem; color:#6e5e48; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
+          <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
         </div>
       </div>
     </div>
@@ -951,17 +1020,17 @@
 
   <!-- Modal Box -->
   <div id="byte-modal-box"
-    style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+    style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
     <!-- Close Button -->
     <button onclick="closeByteModal()" aria-label="Close modal"
-      style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f6e7bd; transition:background 0.2s;"
-      onmouseover="this.style.background='rgba(255,219,137,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+      style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
+      onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
 
     <!-- Preview Screenshot -->
-    <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0f1a2e; position:relative;">
+    <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0f0a0a; position:relative;">
       <img src="image/bytestore.png" aria-hidden="true"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
       <img src="image/bytestore.png" alt="ByteStore Preview"
@@ -972,43 +1041,43 @@
     <div style="padding:1.75rem 2rem 2rem;">
 
       <!-- Demo badge -->
-      <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#F2921D; background:rgba(242,146,29,0.12); border:1px solid rgba(242,146,29,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+      <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
         Demo Project
       </span>
 
-      <h2 id="byte-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f6e7bd; margin:0 0 0.6rem;">ByteStore</h2>
+      <h2 id="byte-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">ByteStore</h2>
 
       <!-- Disclaimer box -->
-      <div style="background:rgba(255,219,137,0.06); border-left:3px solid rgba(255,219,137,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
-        <p style="font-size:0.82rem; line-height:1.65; color:#c9b99a; margin:0;">
-          <strong style="color:#ffdb89;">Heads up —</strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the cart, checkout, or admin features are functional. Think of it as a design & code showcase.
+      <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+        <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
+          <strong style="color:#e85d75;">Heads up —</strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the cart, checkout, or admin features are functional. Think of it as a design & code showcase.
         </p>
       </div>
 
-      <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1rem;">A full-stack e-commerce store for tech products — featuring product listings, a shopping cart system, and an admin dashboard, built with PHP, MySQL, and Tailwind CSS.</p>
+      <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A full-stack e-commerce store for tech products — featuring product listings, a shopping cart system, and an admin dashboard, built with PHP, MySQL, and Tailwind CSS.</p>
 
       <div class="tech-stack-row" aria-label="ByteStore tech stack">
-        <span class="tech-icon" title="PHP"><img src="https://skillicons.dev/icons?i=php" alt="PHP icon"></span>
-        <span class="tech-icon" title="MySQL"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL icon"></span>
-        <span class="tech-icon" title="Tailwind CSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS icon"></span>
+        <span class="tech-icon" title="PHP"><img src="https://skillicons.dev/icons?i=php " alt="PHP icon"></span>
+        <span class="tech-icon" title="MySQL"><img src="https://skillicons.dev/icons?i=mysql " alt="MySQL icon"></span>
+        <span class="tech-icon" title="Tailwind CSS"><img src="https://skillicons.dev/icons?i=tailwind " alt="Tailwind CSS icon"></span>
       </div>
 
       <div class="modal-actions">
-        <a href="https://jmdmanalo2222.github.io/bytestore/" target="_blank" rel="noopener"
-          style="display:inline-flex; align-items:center; gap:8px; background:#ffdb89; color:#1a1200; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
-          onmouseover="this.style.background='#f4ca66'; this.style.transform='translateY(-1px)'"
-          onmouseout="this.style.background='#ffdb89'; this.style.transform='translateY(0)'">
+        <a href="https://jmdmanalo2222.github.io/bytestore/ " target="_blank" rel="noopener"
+          style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+          onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
+          onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
           View Live Demo
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
         </a>
 
-        <a href="https://github.com/jmdmanalo2222" target="_blank" rel="noopener" class="c-btn-github">
+        <a href="https://github.com/jmdmanalo2222 " target="_blank" rel="noopener" class="c-btn-github">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
           View GitHub
         </a>
 
-        <span style="font-size:0.72rem; color:#6e5e48; font-family:'DM Mono',monospace;">PHP &middot; MySQL &middot; Tailwind</span>
+        <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">PHP &middot; MySQL &middot; Tailwind</span>
       </div>
     </div>
   </div>
@@ -1022,15 +1091,15 @@
     <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
 
     <div id="prime-modal-box"
-      style="position:relative; width:100%; max-width:680px; background:#181818; border:1px solid rgba(255,219,137,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+      style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
       <button onclick="closePrimeModal()" aria-label="Close modal"
-        style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f6e7bd; transition:background 0.2s;"
-        onmouseover="this.style.background='rgba(255,219,137,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
+        style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
+        onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
-      <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#141414; position:relative;">
+      <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0c0808; position:relative;">
         <img src="image/primeestates.png" aria-hidden="true"
           style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5;">
         <img src="image/primeestates.png" alt="PrimeEstates Preview"
@@ -1038,42 +1107,42 @@
       </div>
 
       <div style="padding:1.75rem 2rem 2rem;">
-        <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#F2921D; background:rgba(242,146,29,0.12); border:1px solid rgba(242,146,29,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+        <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
           Demo Project
         </span>
 
-        <h2 id="prime-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f6e7bd; margin:0 0 0.6rem;">PrimeEstates</h2>
+        <h2 id="prime-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">PrimeEstates</h2>
 
-        <div style="background:rgba(255,219,137,0.06); border-left:3px solid rgba(255,219,137,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
-          <p style="font-size:0.82rem; line-height:1.65; color:#c9b99a; margin:0;">
-            <strong style="color:#ffdb89;">Heads up —</strong> this is a portfolio demo project built to showcase a clean real estate layout and browsing experience. It is not a live property marketplace and its listings and inquiry flows are for presentation purposes.
+        <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+          <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
+            <strong style="color:#e85d75;">Heads up —</strong> this is a portfolio demo project built to showcase a clean real estate layout and browsing experience. It is not a live property marketplace and its listings and inquiry flows are for presentation purposes.
           </p>
         </div>
 
-        <p style="font-size:0.88rem; line-height:1.7; color:#a89880; margin:0 0 1rem;">A modern real estate website concept designed to present featured homes, property listings, and a polished user experience for buyers exploring residential spaces online.</p>
+        <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A modern real estate website concept designed to present featured homes, property listings, and a polished user experience for buyers exploring residential spaces online.</p>
 
         <div class="tech-stack-row" aria-label="PrimeEstates tech stack">
-          <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html" alt="HTML5 icon"></span>
-          <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css" alt="CSS3 icon"></span>
-          <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript icon"></span>
+          <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html " alt="HTML5 icon"></span>
+          <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css " alt="CSS3 icon"></span>
+          <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js " alt="JavaScript icon"></span>
         </div>
 
         <div class="modal-actions">
-          <a href="https://jmdmanalo2222.github.io/primeestates/" target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:8px; background:#ffdb89; color:#1a1200; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
-            onmouseover="this.style.background='#f4ca66'; this.style.transform='translateY(-1px)'"
-            onmouseout="this.style.background='#ffdb89'; this.style.transform='translateY(0)'">
+          <a href="https://jmdmanalo2222.github.io/primeestates/ " target="_blank" rel="noopener"
+            style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+            onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
+            onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
             View Live Demo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
           </a>
 
-          <a href="https://github.com/jmdmanalo2222" target="_blank" rel="noopener" class="c-btn-github">
+          <a href="https://github.com/jmdmanalo2222 " target="_blank" rel="noopener" class="c-btn-github">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             View GitHub
           </a>
 
-          <span style="font-size:0.72rem; color:#6e5e48; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
+          <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
         </div>
       </div>
     </div>
@@ -1194,66 +1263,5 @@
     }
   </script>
 
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
-  }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
-    }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
-      }
-    }
-  }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-    }
-  });
-})();
-</script></body>
+</body>
 </html>
