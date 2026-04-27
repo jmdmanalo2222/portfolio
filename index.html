@@ -12,7 +12,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<!-- CHANGE 1: Replaced Syne with Orbitron (futuristic geometric font) -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -21,7 +22,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Syne', 'sans-serif'],
+            // CHANGE 2: Updated font family to Orbitron
+            sans: ['Orbitron', 'sans-serif'],
             mono: ['DM Mono', 'monospace'],
           },
           animation: {
@@ -132,7 +134,7 @@
   gap:8px;
   background:transparent;
   color:#f0e8e0;
-  font-family:'Syne',sans-serif;
+  font-family:'Orbitron',sans-serif;
   font-size:0.85rem;
   font-weight:700;
   padding:0.65rem 1.2rem;
@@ -244,11 +246,13 @@
   </div>
 
 <!-- HERO -->
-  <section class="min-h-screen flex flex-col lg:flex-row justify-center items-center px-[6vw] pt-40 pb-24 relative overflow-hidden gap-12 lg:gap-8" id="home">
+<!-- CHANGE 3 & 4: Fixed hero overlap — text gets min-w-0, portrait gets explicit flex-shrink:0 + fixed width -->
+  <section class="min-h-screen flex flex-col lg:flex-row justify-center items-center px-[6vw] pt-40 pb-24 relative overflow-hidden gap-12 lg:gap-16 xl:gap-20" id="home">
     <div class="absolute w-[700px] h-[700px] rounded-full pointer-events-none -top-36 -right-48" style="background: radial-gradient(circle, color-mix(in srgb, var(--accent) 12%, transparent) 0%, transparent 70%);"></div>
     <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--accent-soft), var(--accent-strong), var(--accent-soft), transparent);"></div>
 
-    <div class="flex-1 max-w-3xl">
+    <!-- Text column: min-w-0 prevents flex item from overflowing into portrait -->
+    <div class="flex-1 min-w-0 max-w-3xl">
       <div class="inline-flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase mb-6 opacity-0 animate-[fadeUp_0.6s_0.2s_forwards]" style="color: var(--accent-soft);">
         <span class="block w-7 h-px" style="background: var(--accent);"></span>
         Available for freelance projects and open to work
@@ -287,8 +291,8 @@
       </div>
     </div>
 
-    <!-- HERO PORTRAIT -->
-    <div class="hidden lg:flex items-center justify-center flex-shrink-0 opacity-0 animate-[fadeUp_0.7s_0.75s_forwards]">
+    <!-- HERO PORTRAIT: explicit flex-shrink:0 + width prevents overlap -->
+    <div class="hidden lg:flex items-center justify-center opacity-0 animate-[fadeUp_0.7s_0.75s_forwards]" style="flex-shrink: 0; width: 340px;">
       <div class="hero-portrait-wrap">
         <div class="portrait-border-glow"></div>
         <img class="portrait-light" src="image/josh-grey.png" alt="Josh Manalo — Professional portrait on grey background">
@@ -493,23 +497,18 @@
       <!-- Project Card 1 — Kape Ni Lola -->
     <div onclick="openKapeModal()" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
       <div class="relative overflow-hidden" style="aspect-ratio: 16/9; background: var(--bg3);">
-
-        <!-- Blurred background fill (same image, blurred) -->
         <img
           src="image/kape-ni-lola-preview.png"
           aria-hidden="true"
           class="absolute inset-0 w-full h-full object-cover"
           style="filter: blur(8px); transform: scale(1.08); opacity: 0.5;"
         >
-
-        <!-- Main image, fully visible, no cropping -->
         <img
           src="image/kape-ni-lola-preview.png"
           alt="Kape Ni Lola"
           class="absolute inset-0 w-full h-full"
           style="object-fit: contain; object-position: center;"
         >
-
       </div>
       <div class="p-5">
         <div class="flex items-center justify-between mb-2">
@@ -526,11 +525,9 @@
       <!-- Project Card 2 — ByteStore -->
       <div onclick="openByteModal()" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
         <div class="relative overflow-hidden" style="aspect-ratio: 16/9; background: var(--bg3);">
-          <!-- Blurred background fill -->
           <img src="image/bytestore.png" aria-hidden="true"
             class="absolute inset-0 w-full h-full object-cover"
             style="filter: blur(8px); transform: scale(1.08); opacity: 0.5;">
-          <!-- Main image -->
           <img src="image/bytestore.png" alt="ByteStore"  
             class="absolute inset-0 w-full h-full"
             style="object-fit: contain; object-position: center;">
@@ -586,7 +583,6 @@
     <div class="reveal">
       <div class="border p-10 md:p-16 relative" style="background: var(--bg2); border-color: var(--border);">
 
-        <!-- Corner accents -->
         <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2" style="border-color: var(--accent);"></div>
         <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2" style="border-color: var(--accent);"></div>
         <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2" style="border-color: var(--accent);"></div>
@@ -615,12 +611,10 @@
               </div>
             </div>
 
-            <!-- Placeholder download button — update href when CV is ready -->
             <a href="https://drive.google.com/file/d/1XRf9hfPjS6l_7TifdjaBOE48QQA5Xi4m/view?usp=drive_link " id="cv-download-btn" class="c-btn-primary" target="_blank" rel="noopener">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
               Download CV
             </a>
-            <p class="font-mono text-[10px] mt-3" style="color: var(--muted);"><!-- Update href above with your CV link when ready --></p>
           </div>
 
           <div class="space-y-4">
@@ -737,7 +731,6 @@
         </div>
       </div>
 
-      <!-- Contact Form — replace YOUR_FORM_ID with your Formspree ID -->
       <form id="contact-form" action="https://formspree.io/f/maqandor " method="POST" class="flex flex-col gap-5">
         <div class="flex flex-col gap-2">
           <label class="text-xs tracking-widest uppercase" style="color: var(--muted);">Your Name</label>
@@ -755,7 +748,6 @@
         <p id="form-status" class="text-xs text-center hidden" style="color: var(--accent);"></p>
 
         <p class="font-mono text-[10px] text-center" style="color: var(--muted);">
-          <!-- Once you have your Formspree ID, replace YOUR_FORM_ID in the form action above -->
           Form powered by Formspree · Responses go to jmdmanalo2222@gmail.com
         </p>
       </form>
@@ -937,45 +929,32 @@
     style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1rem;"
     onclick="handleModalBackdropClick(event)">
 
-    <!-- Backdrop -->
     <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
 
-    <!-- Modal Box -->
     <div id="kape-modal-box"
       style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
-      <!-- Close Button -->
       <button onclick="closeKapeModal()" aria-label="Close modal"
         style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
         onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
 
-      <!-- Preview Screenshot -->
       <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#1a1212; position:relative;">
-        
-        <!-- Blurred bg layer -->
         <img src="image/kape-ni-lola-preview.png" aria-hidden="true"
           style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
-        
-        <!-- Main image, no cropping -->
         <img id="kape-modal-img" src="" alt="Kape Ni Lola Preview"
           style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; display:block;">
-
       </div>
 
-      <!-- Content -->
       <div style="padding:1.75rem 2rem 2rem;">
-
-        <!-- Demo badge -->
         <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
           Demo Project
         </span>
 
-        <h2 id="kape-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">Kape Ni Lola</h2>
+        <h2 id="kape-modal-title" style="font-family:'Orbitron',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">Kape Ni Lola</h2>
 
-        <!-- Disclaimer box -->
         <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
           <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
             <strong style="color:#e85d75;">Heads up —</strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the forms, reservations, or links are functional. Think of it as a design & code showcase.
@@ -992,7 +971,7 @@
 
         <div class="modal-actions">
           <a href="https://jmdmanalo2222.github.io/kape-ni-lola/ " target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+            style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
             onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)';"
             onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)';">
             View Live Demo
@@ -1015,21 +994,17 @@
   style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1rem;"
   onclick="handleByteModalBackdropClick(event)">
 
-  <!-- Backdrop -->
   <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
 
-  <!-- Modal Box -->
   <div id="byte-modal-box"
     style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
 
-    <!-- Close Button -->
     <button onclick="closeByteModal()" aria-label="Close modal"
       style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
       onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
 
-    <!-- Preview Screenshot -->
     <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0f0a0a; position:relative;">
       <img src="image/bytestore.png" aria-hidden="true"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
@@ -1037,18 +1012,14 @@
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; display:block;">
     </div>
 
-    <!-- Content -->
     <div style="padding:1.75rem 2rem 2rem;">
-
-      <!-- Demo badge -->
       <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
         Demo Project
       </span>
 
-      <h2 id="byte-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">ByteStore</h2>
+      <h2 id="byte-modal-title" style="font-family:'Orbitron',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">ByteStore</h2>
 
-      <!-- Disclaimer box -->
       <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
         <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
           <strong style="color:#e85d75;">Heads up —</strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the cart, checkout, or admin features are functional. Think of it as a design & code showcase.
@@ -1065,7 +1036,7 @@
 
       <div class="modal-actions">
         <a href="https://jmdmanalo2222.github.io/bytestore/ " target="_blank" rel="noopener"
-          style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+          style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
           onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
           onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
           View Live Demo
@@ -1112,7 +1083,7 @@
           Demo Project
         </span>
 
-        <h2 id="prime-modal-title" style="font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">PrimeEstates</h2>
+        <h2 id="prime-modal-title" style="font-family:'Orbitron',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">PrimeEstates</h2>
 
         <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
           <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
@@ -1130,7 +1101,7 @@
 
         <div class="modal-actions">
           <a href="https://jmdmanalo2222.github.io/primeestates/ " target="_blank" rel="noopener"
-            style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Syne',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+            style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
             onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
             onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
             View Live Demo
@@ -1149,7 +1120,6 @@
   </div>
 
   <script>
-    // ---- Kape Ni Lola Modal Logic ----
     (function() {
       var modalImg = document.getElementById('kape-modal-img');
       if (modalImg) { modalImg.src = 'image/kape-ni-lola-preview.png'; }
@@ -1191,7 +1161,6 @@
   </script>
 
   <script>
-    // ---- ByteStore Modal Logic ----
     function openByteModal() {
       var modal = document.getElementById('byte-modal');
       var box   = document.getElementById('byte-modal-box');
@@ -1219,18 +1188,16 @@
       }, 300);
     }
 
-        function handleByteModalBackdropClick(e) {
+    function handleByteModalBackdropClick(e) {
       if (e.target === document.getElementById('byte-modal')) { closeByteModal(); }
     }
 
-    // Escape key — closes whichever modal is open
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); closePrimeModal(); }
     });
   </script>
 
   <script>
-    // ---- PrimeEstates Modal Logic ----
     function openPrimeModal() {
       var modal = document.getElementById('prime-modal');
       var box   = document.getElementById('prime-modal-box');
