@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: 'Orbitron', sans-serif;
+  --font-family-mono: 'DM Mono', monospace;
+
+  --animate-fade-up: fadeUp 0.7s ease forwards;
+  --animate-scroll-pulse: scrollPulse 2s 1.5s infinite;
+  --animate-blink: blink 1s step-end infinite;
+
+  --keyframes-fadeUp: {
+    0%: { opacity: 0; transform: translateY(24px); }
+    100%: { opacity: 1; transform: translateY(0); }
+  };
+  --keyframes-scrollPulse: {
+    0%, 100%: { opacity: 0.4; }
+    50%: { opacity: 1; }
+  };
+  --keyframes-blink: {
+    0%, 100%: { opacity: 1; }
+    50%: { opacity: 0; }
+  };
+}
