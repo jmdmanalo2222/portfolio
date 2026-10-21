@@ -4,13 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Josh Manalo | Fullstack Developer</title>
+<title>Josh Manalo | Web Developer &amp; Technical SEO Specialist</title>
+<meta name="description" content="Freelance web developer and technical SEO specialist based in the Philippines, available for US and worldwide projects. Explore website demos and discuss your project."/>
+<script src="js/theme-preference.js"></script>
 
 <!-- Favicon -->
 <link rel="icon" href="image/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
 
 <!-- CHANGE 1: Replaced Syne with Orbitron (futuristic geometric font) -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
@@ -91,64 +93,6 @@
 </style>
 
 <style id="project-enhancements">
-.tech-stack-row{
- display:flex;
- align-items:center;
- gap:10px;
- flex-wrap:wrap;
- margin-top:4px;
- margin-bottom:14px;
-}
-.tech-icon{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- width:34px;
- height:34px;
- border-radius:10px;
- border:1px solid rgba(196,30,58,0.18);
- background:rgba(255,255,255,0.04);
- overflow:hidden;
- transition:transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-.tech-icon:hover{
- transform:translateY(-2px);
- border-color:rgba(196,30,58,0.42);
- background:rgba(196,30,58,0.08);
-}
-.tech-icon img{
- width:20px;
- height:20px;
- object-fit:contain;
- display:block;
-}
-.modal-actions{
- display:flex;
- align-items:center;
- gap:12px;
- flex-wrap:wrap;
-}
-.c-btn-github{
- display:inline-flex;
- align-items:center;
- gap:8px;
- background:transparent;
- color:#f0e8e0;
- font-family:'Orbitron',sans-serif;
- font-size:0.85rem;
- font-weight:700;
- padding:0.65rem 1.2rem;
- border-radius:10px;
- text-decoration:none;
- border:1px solid rgba(196,30,58,0.24);
- transition:background 0.2s, transform 0.15s, border-color 0.2s;
-}
-.c-btn-github:hover{
- background:rgba(196,30,58,0.08);
- border-color:rgba(196,30,58,0.42);
- transform:translateY(-1px);
-}
-
 /* ─── PORTRAIT STYLES ─── */
 .hero-portrait-wrap {
  position: relative;
@@ -193,8 +137,11 @@
 }
 </style>
 
- <link rel="stylesheet" href="contrast-fix.css"/>
+ <link rel="stylesheet" href="css/project-previews.css"/>
+ <link rel="stylesheet" href="css/portfolio-navigation.css"/>
+ <script src="js/portfolio-navigation.js" defer></script>
 
+<link rel="stylesheet" href="css/personal-projects.css">
 </head>
 <body class="antialiased">
 
@@ -207,7 +154,8 @@
   <ul class="hidden md:flex gap-10 list-none items-center">
    <li><a href="#about"  class="c-nav-link" data-section="about">About</a></li>
    <li><a href="#skills" class="c-nav-link" data-section="skills">Skills</a></li>
-   <li><a href="#projects" class="c-nav-link" data-section="projects">Projects</a></li>
+   <li><a href="#projects" class="c-nav-link" data-section="projects">Demos</a></li>
+   <li><a href="projects/index.html" class="c-nav-link">Projects</a></li>
    <li><a href="#cv"   class="c-nav-link" data-section="cv">CV</a></li>
    <li><a href="#contact" class="c-nav-link" data-section="contact">Contact</a></li>
   </ul>
@@ -233,7 +181,8 @@
   <ul class="flex flex-col items-center gap-8 list-none">
    <li><a href="#about"  class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">About</a></li>
    <li><a href="#skills" class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">Skills</a></li>
-   <li><a href="#projects" class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">Projects</a></li>
+   <li><a href="#projects" class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">Demos</a></li>
+   <li><a href="projects/index.html" class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">Projects</a></li>
    <li><a href="#cv"   class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">CV</a></li>
    <li><a href="#contact" class="font-sans font-bold text-3xl tracking-tight transition-colors duration-300 mobile-nav-link" style="color: var(--text);">Contact</a></li>
   </ul>
@@ -255,7 +204,7 @@
   <div class="flex-1 min-w-0 max-w-3xl">
    <div class="inline-flex items-center gap-2.5 text-xs tracking-[0.18em] uppercase mb-6 opacity-0 animate-[fadeUp_0.6s_0.2s_forwards]" style="color: var(--accent-soft);">
     <span class="block w-7 h-px" style="background: var(--accent);"></span>
-    Available for freelance projects and open to work
+    Available for US and worldwide projects
    </div>
 
    <div class="font-sans text-[clamp(1rem,2vw,1.3rem)] font-semibold tracking-widest uppercase opacity-0 animate-[fadeUp_0.7s_0.28s_forwards]" style="color: var(--muted);">Josh Michael Manalo</div>
@@ -266,7 +215,7 @@
    </h1>
 
    <p class="mt-8 max-w-md text-sm leading-relaxed opacity-0 animate-[fadeUp_0.7s_0.5s_forwards]" style="color: var(--muted);">
-    Full-stack web developer and SEO specialist building responsive, reliable websites that look polished, feel intuitive, and rank well in search.
+    Full-stack web developer and technical SEO specialist building responsive business websites and online stores. Available for US and worldwide projects, with a focus on clear design, performance, and useful functionality.
    </p>
 
    <div class="mt-6 flex flex-wrap gap-2 opacity-0 animate-[fadeUp_0.7s_0.58s_forwards]">
@@ -283,7 +232,8 @@
    </div>
 
    <div class="mt-10 flex gap-5 flex-wrap opacity-0 animate-[fadeUp_0.7s_0.65s_forwards]">
-    <a href="#contact" class="c-btn-primary">Get In Touch →</a>
+    <a href="showcase.html" class="c-btn-primary showcase-entry-link">Explore the Showcase ↗</a>
+    <a href="#contact" class="c-btn-outline">Get In Touch →</a>
     <a href="#cv" class="c-btn-outline">
      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
      Download CV
@@ -305,6 +255,29 @@
    Scroll to explore
   </div>
  </section>
+
+ <!-- Scroll-triggered section guide -->
+ <nav id="section-guide" class="section-guide" aria-label="On this page" aria-hidden="true" inert>
+  <div class="section-guide-heading">
+   <span class="section-guide-label">On this page</span>
+   <button type="button" class="section-guide-close" aria-label="Close section menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+  </div>
+  <ul class="section-guide-list">
+    <li><a class="section-guide-link" href="#about" data-label="About"><span class="section-guide-number" aria-hidden="true">01</span><span>About</span></a></li>
+    <li><a class="section-guide-link" href="#skills" data-label="Skills"><span class="section-guide-number" aria-hidden="true">02</span><span>Skills</span></a></li>
+    <li><a class="section-guide-link" href="#projects" data-label="Demos"><span class="section-guide-number" aria-hidden="true">03</span><span>Demos</span></a></li>
+    <li><a class="section-guide-link" href="#cv" data-label="CV"><span class="section-guide-number" aria-hidden="true">04</span><span>CV</span></a></li>
+    <li><a class="section-guide-link" href="#contact" data-label="Contact"><span class="section-guide-number" aria-hidden="true">05</span><span>Contact</span></a></li>
+  </ul>
+  <a class="section-guide-showcase" href="projects/index.html">Personal Projects <span aria-hidden="true">↗</span></a>
+  <a class="section-guide-showcase" href="showcase.html">Explore Showcase <span aria-hidden="true">↗</span></a>
+ </nav>
+ <button id="section-guide-toggle" class="section-guide-toggle" type="button" aria-controls="section-guide" aria-expanded="false" aria-label="Open section menu" hidden>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+  On this page <span aria-hidden="true">·</span> <span id="section-guide-current">About</span>
+ </button>
+
+ <div id="portfolio-information" class="portfolio-information">
 
  <!-- ABOUT -->
  <section id="about" class="px-[6vw] py-28" style="position: relative;">
@@ -487,24 +460,25 @@
 
  <!-- PROJECTS -->
  <section id="projects" class="px-[6vw] py-28 transition-colors duration-500" style="background: var(--bg2);">
-  <div class="c-section-label">03 Projects</div>
-  <h2 class="font-sans text-[clamp(1.8rem,4vw,3rem)] font-bold tracking-tight mb-6" style="color: var(--text);">Featured Work</h2>
+  <div class="c-section-label">03 Demos</div>
+  <h2 class="font-sans text-[clamp(1.8rem,4vw,3rem)] font-bold tracking-tight mb-6" style="color: var(--text);">Featured Demos</h2>
 
-  <p class="max-w-2xl text-sm leading-7 mb-12 reveal" style="color: var(--muted);">A selection of projects I've built or contributed to from client work to personal experiments. Each one taught me something new.</p>
+  <p class="max-w-2xl text-sm leading-7 mb-12 reveal" style="color: var(--muted);">Explore website demos for restaurants, online stores, and real estate. Open a preview to see the design and features, or visit the Showcase to browse by project type.</p>
+  <a class="showcase-section-link" href="showcase.html">Explore all project types <span aria-hidden="true">↗</span></a>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 reveal">
 
    <!-- Project Card 1 Kape Ni Lola -->
-  <div onclick="openKapeModal()" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
+  <div onclick="openKapeModal(this)" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="kape-modal" aria-label="View Kape Ni Lola project details" class="project-preview-trigger group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
    <div class="relative overflow-hidden" style="aspect-ratio: 16/9; background: var(--bg3);">
     <img
-     src="image/kape-ni-lola-preview.png"
+     src="image/kape-ni-lola-updated-preview.svg"
      aria-hidden="true"
      class="absolute inset-0 w-full h-full object-cover"
      style="filter: blur(8px); transform: scale(1.08); opacity: 0.5;"
     >
     <img
-     src="image/kape-ni-lola-preview.png"
+     src="image/kape-ni-lola-updated-preview.svg"
      alt="Kape Ni Lola"
      class="absolute inset-0 w-full h-full"
      style="object-fit: contain; object-position: center;"
@@ -515,7 +489,7 @@
      <h3 class="font-sans text-base font-bold" style="color: var(--text);">Kape Ni Lola</h3>
      <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="color: var(--accent);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
     </div>
-    <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">A modern Filipino cafe landing page with menu showcase, gallery, reservation form, and smooth scroll animations.</p>
+    <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">A warm Filipino café concept with six pages, a filterable menu, real photography, a gallery viewer, and a reservation preview.</p>
     <div class="flex flex-wrap gap-2">
      <span class="c-tag">HTML</span><span class="c-tag">CSS</span><span class="c-tag">JavaScript</span>
     </div>
@@ -523,12 +497,12 @@
   </div>
 
    <!-- Project Card 2 ByteStore -->
-   <div onclick="openByteModal()" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
+   <div onclick="openByteModal(this)" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="byte-modal" aria-label="View ByteStore project details" class="project-preview-trigger group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
     <div class="relative overflow-hidden" style="aspect-ratio: 16/9; background: var(--bg3);">
-     <img src="image/bytestore.png" aria-hidden="true"
+     <img src="image/bytestore-updated-preview.svg" aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover"
       style="filter: blur(8px); transform: scale(1.08); opacity: 0.5;">
-     <img src="image/bytestore.png" alt="ByteStore" 
+     <img src="image/bytestore-updated-preview.svg" alt="ByteStore" 
       class="absolute inset-0 w-full h-full"
       style="object-fit: contain; object-position: center;">
     </div>
@@ -537,7 +511,7 @@
       <h3 class="font-sans text-base font-bold" style="color: var(--text);">ByteStore</h3>
       <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="color: var(--accent);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
      </div>
-     <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">A full-stack e-commerce store for tech products with product listings, cart system, and admin dashboard.</p>
+     <p class="text-sm leading-relaxed mb-4" style="color: var(--muted);">A tech store demo with real product photography, search and filters, a working local cart, and a checkout preview.</p>
      <div class="flex flex-wrap gap-2">
       <span class="c-tag">PHP</span><span class="c-tag">MySQL</span><span class="c-tag">Tailwind</span>
      </div>
@@ -545,12 +519,12 @@
    </div>
 
    <!-- Project Card 3 PrimeEstates -->
-   <div onclick="openPrimeModal()" class="group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
+   <div onclick="openPrimeModal(this)" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="prime-modal" aria-label="View PrimeEstates project details" class="project-preview-trigger group block border overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 cursor-pointer" style="background: var(--bg); border-color: var(--border); border-radius: 18px;">
     <div class="relative overflow-hidden" style="aspect-ratio: 16/9; background: var(--bg3);">
-     <img src="image/primeestates.png" aria-hidden="true"
+     <img src="image/primeestates-updated-preview.svg" aria-hidden="true"
       class="absolute inset-0 w-full h-full object-cover"
       style="filter: blur(8px); transform: scale(1.08); opacity: 0.5;">
-     <img src="image/primeestates.png" alt="PrimeEstates"
+     <img src="image/primeestates-updated-preview.svg" alt="PrimeEstates"
       class="absolute inset-0 w-full h-full"
       style="object-fit: contain; object-position: center;">
     </div>
@@ -696,7 +670,7 @@
   <div class="grid md:grid-cols-2 gap-20 reveal">
    <div>
     <h3 class="font-sans text-2xl font-bold mb-4" style="color: var(--text);">Got a project <span style="color: var(--accent-strong);">in mind?</span></h3>
-    <p class="text-sm leading-7 mb-8" style="color: var(--muted);">I am available for freelance work and open to meaningful collaborations. If you need a developer who values clean execution and clear communication, feel free to reach out.</p>
+    <p class="text-sm leading-7 mb-8" style="color: var(--muted);">Available for remote projects with US and worldwide clients. Share what your business does, the kind of website you need, and what you want visitors to do. I can help you plan the next step.</p>
 
     <div class="grid grid-cols-2 gap-3">
 
@@ -734,15 +708,15 @@
    <form id="contact-form" action="https://formspree.io/f/maqandor " method="POST" class="flex flex-col gap-5">
     <div class="flex flex-col gap-2">
      <label class="text-xs tracking-widest uppercase" style="color: var(--muted);">Your Name</label>
-     <input type="text" name="name" required class="c-input" placeholder="Juan Dela Cruz" />
+     <input type="text" name="name" required class="c-input" placeholder="Your full name" />
     </div>
     <div class="flex flex-col gap-2">
      <label class="text-xs tracking-widest uppercase" style="color: var(--muted);">Email Address</label>
-     <input type="email" name="email" required class="c-input" placeholder="juan@example.com" />
+     <input type="email" name="email" required class="c-input" placeholder="you@example.com" />
     </div>
     <div class="flex flex-col gap-2">
      <label class="text-xs tracking-widest uppercase" style="color: var(--muted);">Project Details</label>
-     <textarea name="message" required class="c-input resize-y min-h-[130px]" placeholder="Tell me about your project what are you building and how can I help?"></textarea>
+     <textarea name="message" required class="c-input resize-y min-h-[130px]" placeholder="Tell me about your business, the website you need, and your goals."></textarea>
     </div>
     <button type="submit" id="submit-btn" class="c-btn-primary w-full justify-center">Send Message →</button>
     <p id="form-status" class="text-xs text-center hidden" style="color: var(--accent);"></p>
@@ -753,6 +727,8 @@
    </form>
   </div>
  </section>
+
+ </div><!-- /portfolio-information -->
 
  <!-- FOOTER -->
  <footer class="px-[6vw] py-10 border-t flex justify-between items-center flex-wrap gap-4 transition-colors duration-500" style="border-color: var(--border);">
@@ -774,6 +750,7 @@
   function setTheme(theme) {
    root.setAttribute('data-theme', theme);
    window.__themePreference = theme;
+   try { localStorage.setItem('portfolio-theme', theme); } catch (_) {}
    if (theme === 'light') {
     iconMoon.classList.add('hidden');
     iconSun.classList.remove('hidden');
@@ -925,39 +902,38 @@
  </script>
 
  <!-- ===== KAPE NI LOLA MODAL ===== -->
- <div id="kape-modal" role="dialog" aria-modal="true" aria-labelledby="kape-modal-title"
-  style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1rem;"
-  onclick="handleModalBackdropClick(event)">
+ <div id="kape-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="kape-modal-title" aria-hidden="true" hidden>
 
-  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
+  <div class="project-modal-backdrop" aria-hidden="true"></div>
 
-  <div id="kape-modal-box"
-   style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+  <div id="kape-modal-box" class="project-modal-card">
 
-   <button onclick="closeKapeModal()" aria-label="Close modal"
-    style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
-    onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-   </button>
+   <header class="project-modal-header">
+    <div class="project-modal-heading">
+     <span class="project-modal-eyebrow">Project showcase</span>
+     <h2 id="kape-modal-title" class="project-modal-title">Kape Ni Lola</h2>
+    </div>
+    <button type="button" class="project-modal-exit" data-project-close aria-label="Exit Kape Ni Lola project preview">Exit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+   </header>
+
+   <div class="project-modal-body">
 
    <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#1a1212; position:relative;">
-    <img src="image/kape-ni-lola-preview.png" aria-hidden="true"
+    <img src="image/kape-ni-lola-updated-preview.svg" aria-hidden="true"
      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
-    <img id="kape-modal-img" src="" alt="Kape Ni Lola Preview"
+    <img id="kape-modal-img" src="image/kape-ni-lola-updated-preview.svg" alt="Kape Ni Lola Preview"
      style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; display:block;">
    </div>
 
-   <div style="padding:1.75rem 2rem 2rem;">
+   <div class="project-modal-content">
     <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
      Demo Project
     </span>
 
-    <h2 id="kape-modal-title" style="font-family:'Orbitron',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">Kape Ni Lola</h2>
-
     <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
      <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
-      <strong style="color:#e85d75;">Heads up </strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the forms, reservations, or links are functional. Think of it as a design & code showcase.
+      <strong style="color:#e85d75;">Heads up </strong> this is a front-end demo project built for portfolio purposes. It is not a real business. Menu filters and the photo gallery work; reservation and contact forms show preview confirmations without sending details.
      </p>
     </div>
 
@@ -970,11 +946,11 @@
     </div>
 
     <div class="modal-actions">
-     <a href="https://jmdmanalo2222.github.io/kape-ni-lola/ " target="_blank" rel="noopener"
+     <a href="demos/kape-ni-lola/index.html"
       style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
       onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)';"
       onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)';">
-      View Live Demo
+      Explore Demo
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
      </a>
 
@@ -986,47 +962,51 @@
      <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
     </div>
    </div>
+   </div>
+   <footer class="project-modal-footer">
+    <span class="project-modal-hint">Press Esc or click outside to close</span>
+    <button type="button" class="project-modal-return" data-project-close>Back to demos</button>
+   </footer>
   </div>
  </div>
 
  <!-- ===== BYTESTORE MODAL ===== -->
-<div id="byte-modal" role="dialog" aria-modal="true" aria-labelledby="byte-modal-title"
- style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1rem;"
- onclick="handleByteModalBackdropClick(event)">
+<div id="byte-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="byte-modal-title" aria-hidden="true" hidden>
 
- <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
+ <div class="project-modal-backdrop" aria-hidden="true"></div>
 
- <div id="byte-modal-box"
-  style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+ <div id="byte-modal-box" class="project-modal-card">
 
-  <button onclick="closeByteModal()" aria-label="Close modal"
-   style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
-   onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
-   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-  </button>
+  <header class="project-modal-header">
+    <div class="project-modal-heading">
+     <span class="project-modal-eyebrow">Project showcase</span>
+     <h2 id="byte-modal-title" class="project-modal-title">ByteStore</h2>
+    </div>
+    <button type="button" class="project-modal-exit" data-project-close aria-label="Exit ByteStore project preview">Exit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+   </header>
+
+   <div class="project-modal-body">
 
   <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0f0a0a; position:relative;">
-   <img src="image/bytestore.png" aria-hidden="true"
+   <img src="image/bytestore-updated-preview.svg" aria-hidden="true"
     style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
-   <img src="image/bytestore.png" alt="ByteStore Preview"
+   <img src="image/bytestore-updated-preview.svg" alt="ByteStore Preview"
     style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; display:block;">
   </div>
 
-  <div style="padding:1.75rem 2rem 2rem;">
+  <div class="project-modal-content">
    <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
     <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
     Demo Project
    </span>
 
-   <h2 id="byte-modal-title" style="font-family:'Orbitron',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">ByteStore</h2>
-
    <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
     <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
-     <strong style="color:#e85d75;">Heads up </strong> this is a front-end demo project built for portfolio purposes. It is not a real business and none of the cart, checkout, or admin features are functional. Think of it as a design & code showcase.
+     <strong style="color:#e85d75;">Heads up </strong> this is a front-end demo project built for portfolio purposes. It is not a real business. Product browsing and the local cart work; checkout is a preview with no real purchases or payments.
     </p>
    </div>
 
-   <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A full-stack e-commerce store for tech products featuring product listings, a shopping cart system, and an admin dashboard, built with PHP, MySQL, and Tailwind CSS.</p>
+   <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A tech store demo with nine sample products, search and category filters, individual product pages, a local cart with quantities and discounts, and a checkout preview.</p>
 
    <div class="tech-stack-row" aria-label="ByteStore tech stack">
     <span class="tech-icon" title="PHP"><img src="https://skillicons.dev/icons?i=php " alt="PHP icon"></span>
@@ -1035,11 +1015,11 @@
    </div>
 
    <div class="modal-actions">
-    <a href="https://jmdmanalo2222.github.io/bytestore/ " target="_blank" rel="noopener"
+    <a href="demos/bytestore/index.html"
      style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
      onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
      onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
-     View Live Demo
+     Explore Demo
      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
     </a>
 
@@ -1050,40 +1030,44 @@
 
     <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">PHP &middot; MySQL &middot; Tailwind</span>
    </div>
+   </div>
+   </div>
+   <footer class="project-modal-footer">
+    <span class="project-modal-hint">Press Esc or click outside to close</span>
+    <button type="button" class="project-modal-return" data-project-close>Back to demos</button>
+   </footer>
   </div>
  </div>
-</div>
 
  <!-- ===== PRIMEESTATES MODAL ===== -->
- <div id="prime-modal" role="dialog" aria-modal="true" aria-labelledby="prime-modal-title"
-  style="display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; padding:1rem;"
-  onclick="handlePrimeModalBackdropClick(event)">
+ <div id="prime-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="prime-modal-title" aria-hidden="true" hidden>
 
-  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(6px);"></div>
+  <div class="project-modal-backdrop" aria-hidden="true"></div>
 
-  <div id="prime-modal-box"
-   style="position:relative; width:100%; max-width:680px; background:#161010; border:1px solid rgba(196,30,58,0.22); border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.7); transform:translateY(24px) scale(0.96); opacity:0; filter:blur(12px); transition:transform 0.34s cubic-bezier(.22,1,.36,1), opacity 0.28s ease, filter 0.28s ease;">
+  <div id="prime-modal-box" class="project-modal-card">
 
-   <button onclick="closePrimeModal()" aria-label="Close modal"
-    style="position:absolute; top:14px; right:16px; z-index:10; background:rgba(255,255,255,0.07); border:none; border-radius:50%; width:34px; height:34px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:#f0e8e0; transition:background 0.2s;"
-    onmouseover="this.style.background='rgba(196,30,58,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-   </button>
+   <header class="project-modal-header">
+    <div class="project-modal-heading">
+     <span class="project-modal-eyebrow">Project showcase</span>
+     <h2 id="prime-modal-title" class="project-modal-title">PrimeEstates</h2>
+    </div>
+    <button type="button" class="project-modal-exit" data-project-close aria-label="Exit PrimeEstates project preview">Exit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+   </header>
+
+   <div class="project-modal-body">
 
    <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0c0808; position:relative;">
-    <img src="image/primeestates.png" aria-hidden="true"
+    <img src="image/primeestates-updated-preview.svg" aria-hidden="true"
      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5;">
-    <img src="image/primeestates.png" alt="PrimeEstates Preview"
+    <img src="image/primeestates-updated-preview.svg" alt="PrimeEstates Preview"
      style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center;">
    </div>
 
-   <div style="padding:1.75rem 2rem 2rem;">
+   <div class="project-modal-content">
     <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
      <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
      Demo Project
     </span>
-
-    <h2 id="prime-modal-title" style="font-family:'Orbitron',sans-serif; font-size:1.45rem; font-weight:700; color:#f0e8e0; margin:0 0 0.6rem;">PrimeEstates</h2>
 
     <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
      <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
@@ -1091,7 +1075,7 @@
      </p>
     </div>
 
-    <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A modern real estate website concept designed to present featured homes, property listings, and a polished user experience for buyers exploring residential spaces online.</p>
+    <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A photo-led real estate concept with property search, price and listing filters, saved homes, detailed property previews, and viewing inquiries.</p>
 
     <div class="tech-stack-row" aria-label="PrimeEstates tech stack">
      <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html " alt="HTML5 icon"></span>
@@ -1100,11 +1084,11 @@
     </div>
 
     <div class="modal-actions">
-     <a href="https://jmdmanalo2222.github.io/primeestates/ " target="_blank" rel="noopener"
+     <a href="demos/primeestates/index.html"
       style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
       onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
       onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
-      View Live Demo
+      Explore Demo
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
      </a>
 
@@ -1116,119 +1100,18 @@
      <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
     </div>
    </div>
+   </div>
+   <footer class="project-modal-footer">
+    <span class="project-modal-hint">Press Esc or click outside to close</span>
+    <button type="button" class="project-modal-return" data-project-close>Back to demos</button>
+   </footer>
   </div>
  </div>
 
- <script>
-  (function() {
-   var modalImg = document.getElementById('kape-modal-img');
-   if (modalImg) { modalImg.src = 'image/kape-ni-lola-preview.png'; }
-  })();
+ 
+ <script src="js/project-previews.js"></script>
 
-  function openKapeModal() {
-   var modal = document.getElementById('kape-modal');
-   var box  = document.getElementById('kape-modal-box');
-   modal.style.display = 'flex';
-   document.body.style.overflow = 'hidden';
-   requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-     box.style.transform = 'translateY(0) scale(1)';
-     box.style.opacity  = '1';
-     box.style.filter  = 'blur(0)';
-    });
-   });
-  }
 
-  function closeKapeModal() {
-   var modal = document.getElementById('kape-modal');
-   var box  = document.getElementById('kape-modal-box');
-   box.style.transform = 'translateY(24px) scale(0.96)';
-   box.style.opacity  = '0';
-   box.style.filter  = 'blur(12px)';
-   setTimeout(function() {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-   }, 300);
-  }
-
-  function handleModalBackdropClick(e) {
-   if (e.target === document.getElementById('kape-modal')) { closeKapeModal(); }
-  }
-
-  document.addEventListener('keydown', function(e) {
-   if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); closePrimeModal(); }
-  });
- </script>
-
- <script>
-  function openByteModal() {
-   var modal = document.getElementById('byte-modal');
-   var box  = document.getElementById('byte-modal-box');
-   modal.style.display = 'flex';
-   document.body.style.overflow = 'hidden';
-   requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-     box.style.transform = 'translateY(0) scale(1)';
-     box.style.opacity  = '1';
-     box.style.filter  = 'blur(0)';
-    });
-   });
-  }
-
-  function closeByteModal() {
-   var modal = document.getElementById('byte-modal');
-   var box  = document.getElementById('byte-modal-box');
-   if (!modal) return;
-   box.style.transform = 'translateY(24px) scale(0.96)';
-   box.style.opacity  = '0';
-   box.style.filter  = 'blur(12px)';
-   setTimeout(function() {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-   }, 300);
-  }
-
-  function handleByteModalBackdropClick(e) {
-   if (e.target === document.getElementById('byte-modal')) { closeByteModal(); }
-  }
-
-  document.addEventListener('keydown', function(e) {
-   if (e.key === 'Escape') { closeKapeModal(); closeByteModal(); closePrimeModal(); }
-  });
- </script>
-
- <script>
-  function openPrimeModal() {
-   var modal = document.getElementById('prime-modal');
-   var box  = document.getElementById('prime-modal-box');
-   modal.style.display = 'flex';
-   document.body.style.overflow = 'hidden';
-   requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-     box.style.transform = 'translateY(0) scale(1)';
-     box.style.opacity  = '1';
-     box.style.filter  = 'blur(0)';
-    });
-   });
-  }
-
-  function closePrimeModal() {
-   var modal = document.getElementById('prime-modal');
-   var box  = document.getElementById('prime-modal-box');
-   if (!modal) return;
-   box.style.transform = 'translateY(24px) scale(0.96)';
-   box.style.opacity  = '0';
-   box.style.filter  = 'blur(12px)';
-   setTimeout(function() {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-   }, 300);
-  }
-
-  function handlePrimeModalBackdropClick(e) {
-   if (e.target === document.getElementById('prime-modal')) { closePrimeModal(); }
-  }
- </script>
 
 </body>
 </html>

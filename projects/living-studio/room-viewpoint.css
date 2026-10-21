@@ -1,0 +1,31 @@
+/* Photograph and live surfaces share one camera projection. */
+.room-depth-canvas{position:absolute;inset:0;width:100%;height:100%;display:none;pointer-events:none;filter:brightness(var(--room-brightness));transition:filter .8s ease}
+.room-depth-ready>.room-depth-canvas{display:block}
+.room-depth-ready>.room-image,.room-depth-ready>.room-day-image{opacity:0;transition:none}
+.room-depth-ready{touch-action:none}
+.room-depth-ready button{touch-action:manipulation}
+.room-depth-ready>[data-depth-surface]{transform-origin:0 0;transition:none}
+.room-utility #room-viewpoint-open>i{position:absolute;right:5px;bottom:5px;width:5px;height:5px;border-radius:50%;background:#9eadc2;opacity:.5}
+.room-utility #room-viewpoint-open.is-active>i{background:#b4dcff;box-shadow:0 0 7px #b4dcff80;opacity:1}
+.room-utility #room-viewpoint-open[aria-expanded=true]{background:#263755df;border-color:#ccdcff80}
+.viewpoint-controls{position:absolute;z-index:6;right:max(20px,env(safe-area-inset-right));top:max(76px,calc(env(safe-area-inset-top) + 65px));width:270px;max-height:calc(100dvh - 94px - env(safe-area-inset-top));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:21px;color:#d6e2fa;border:1px solid #c0d3ff38;border-radius:18px;background:linear-gradient(135deg,#1b2940f5,#0c1526f5);box-shadow:0 20px 55px #0006;backdrop-filter:blur(20px)}
+.viewpoint-controls header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.viewpoint-controls header small{font-size:8px;letter-spacing:.2em;color:#8fa5c6}.viewpoint-controls h2{margin:6px 0 0;font-size:21px;font-weight:400;letter-spacing:-.035em}
+.viewpoint-controls header button{width:32px;height:32px;font-size:23px;font-weight:300;color:#abbcda;background:#bed2ff09;border:1px solid #bed2ff20;border-radius:10px}
+.viewpoint-switch{display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px;border-radius:11px;border:1px solid #bed2ff30;background:#bed2ff07;font-size:12px;color:#b9c9e4}
+.viewpoint-switch i{position:relative;width:30px;height:17px;border-radius:20px;background:#6f7f9a44}
+.viewpoint-switch i:after{content:'';position:absolute;left:3px;top:3px;width:11px;height:11px;border-radius:50%;background:#9baac4;transition:transform .2s}
+.viewpoint-switch[aria-pressed=true] i{background:#9dbfff55}.viewpoint-switch[aria-pressed=true] i:after{transform:translateX(13px);background:#d6e8ff}
+.viewpoint-controls p{font-size:11px;line-height:1.65;color:#98acca;margin:13px 0 15px}
+.viewpoint-pad{display:grid;grid-template-columns:repeat(3,40px);grid-template-rows:repeat(3,34px);gap:5px;justify-content:center;margin:12px auto 18px}
+.viewpoint-pad button{background:#bccfff08;border:1px solid #bccfff26;border-radius:10px;font-size:18px;color:#c1d4f3;min-width:34px}
+.viewpoint-pad [data-viewpoint=up]{grid-column:2}.viewpoint-pad [data-viewpoint=left]{grid-row:2;grid-column:1}.viewpoint-pad [data-viewpoint=center]{grid-row:2;grid-column:2;font-size:22px}.viewpoint-pad [data-viewpoint=right]{grid-row:2;grid-column:3}.viewpoint-pad [data-viewpoint=down]{grid-row:3;grid-column:2}
+.viewpoint-controls button:hover{background-color:#b9ccff1a}.viewpoint-controls button:disabled{opacity:.4;cursor:default}
+.viewpoint-controls label{display:flex;justify-content:space-between;font-size:11px;color:#b3c5e2;margin-bottom:9px}.viewpoint-controls output{color:#859bbf;font-variant-numeric:tabular-nums}
+.viewpoint-controls input{width:100%;accent-color:#acc8fa;cursor:pointer;margin:0 0 14px}.viewpoint-controls input:disabled{opacity:.35;cursor:default}
+.viewpoint-controls footer{font-size:10px;line-height:1.5;color:#8299bd;border-top:1px solid #bccfff18;padding-top:12px}
+.viewpoint-hint{position:absolute;z-index:4;left:max(24px,env(safe-area-inset-left));bottom:max(23px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:10px;margin:0;color:#acbedb;font-size:10px;letter-spacing:.02em;text-shadow:0 1px 7px #000;pointer-events:none}
+.viewpoint-hint i{width:5px;height:5px;background:#bddbff;border-radius:50%;box-shadow:0 0 9px #a5c6ff6b}.viewpoint-hint span{color:#d9e6fa}.viewpoint-hint b{font-weight:400;opacity:.5}
+@media(max-aspect-ratio:1/1){.viewpoint-hint{bottom:90px;left:0;width:100%;justify-content:center;font-size:9px;gap:7px}}
+@media(max-width:560px){.viewpoint-controls{right:14px;top:68px;width:min(270px,calc(100vw - 28px));padding:18px}}
+@media(prefers-reduced-motion:reduce){.room-depth-canvas{transition:none}.viewpoint-hint{display:none}}

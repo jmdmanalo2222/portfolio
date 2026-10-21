@@ -4,7 +4,7 @@
  *
  * Problem: --accent (#ffdb89 yellow) and --accent-strong
  *   (#e2b955 gold) were used as text colors. In light mode
- *   these sit on a cream background — contrast ratio is only
+ *   these sit on a cream background  contrast ratio is only
  *   ~1.2 to 1.7:1 (WCAG requires 4.5:1 for normal text).
  *
  * Fix: two new CSS variables --accent-text and
@@ -15,7 +15,7 @@
  * Drop this file AFTER style.css in your <head>.
  * ============================================================ */
 
-/* Dark mode — keep existing yellow (already readable on dark) */
+/* Dark mode  keep existing yellow (already readable on dark) */
 :root,
 [data-theme="dark"] {
   --accent-text:        #ffdb89;   /* same as --accent      */
@@ -23,10 +23,10 @@
   --accent-soft-text:   #f2dfae;   /* same as --text-soft   */
 }
 
-/* Light mode — deep amber, readable on cream backgrounds */
+/* Light mode  deep amber, readable on cream backgrounds */
 [data-theme="light"] {
-  --accent-text:        #7a5500;   /* 6.3 : 1 on #fff7e6 — WCAG AA ✓ */
-  --accent-strong-text: #6b4c00;   /* 7.4 : 1 on #fff7e6 — WCAG AA ✓ */
+  --accent-text:        #7a5500;   /* 6.3 : 1 on #fff7e6  WCAG AA ✓ */
+  --accent-strong-text: #6b4c00;   /* 7.4 : 1 on #fff7e6  WCAG AA ✓ */
   --accent-soft-text:   #3a352d;   /* matches --muted                  */
 }
 

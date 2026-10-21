@@ -1,0 +1,92 @@
+[
+  {
+    "name": "NovaPad Pro 16",
+    "price": 89999,
+    "cat": "Laptop",
+    "rating": "4.8",
+    "stock": true,
+    "id": "1",
+    "image": "assets/7822112.jpg",
+    "desc": "A laptop concept for work, creative projects, and everyday multitasking."
+  },
+  {
+    "name": "BytePhone X12",
+    "price": 34999,
+    "cat": "Smartphone",
+    "rating": "4.6",
+    "stock": true,
+    "id": "2",
+    "image": "assets/404280.jpg",
+    "desc": "A smartphone concept for staying connected throughout your day."
+  },
+  {
+    "name": "SoundDrop ANC",
+    "price": 7499,
+    "cat": "Headphones",
+    "rating": "4.9",
+    "stock": true,
+    "id": "3",
+    "image": "assets/3945667.jpg",
+    "desc": "An over-ear headphone concept for your daily soundtrack."
+  },
+  {
+    "name": "MechKeys Pro 75",
+    "price": 4299,
+    "cat": "Keyboard",
+    "rating": "4.7",
+    "stock": true,
+    "id": "4",
+    "image": "assets/5152261.jpg",
+    "desc": "A mechanical keyboard concept for a more personal desk setup."
+  },
+  {
+    "name": "VisionEdge 27 QHD",
+    "price": 18999,
+    "cat": "Monitor",
+    "rating": "4.7",
+    "stock": true,
+    "id": "5",
+    "image": "assets/6476572.jpg",
+    "desc": "A desktop display concept for a clearer view of your workspace."
+  },
+  {
+    "name": "PulseWatch GT5",
+    "price": 5999,
+    "cat": "Wearable",
+    "rating": "4.5",
+    "stock": true,
+    "id": "6",
+    "image": "assets/11700618.jpg",
+    "desc": "A smartwatch concept for everyday routines."
+  },
+  {
+    "name": "HyperClick X9 Pro",
+    "price": 2899,
+    "cat": "Mouse",
+    "rating": "4.6",
+    "stock": true,
+    "id": "7",
+    "image": "assets/17821147.jpg",
+    "desc": "A mouse concept for focused work and your next gaming session."
+  },
+  {
+    "name": "ClearView 4K Pro",
+    "price": 3499,
+    "cat": "Webcam",
+    "rating": "4.4",
+    "stock": false,
+    "id": "8",
+    "image": "assets/7172701.jpg",
+    "desc": "A webcam concept for a connected workspace."
+  },
+  {
+    "name": "ByteHub 9-in-1 USB-C",
+    "price": 1899,
+    "cat": "Hub",
+    "rating": "4.5",
+    "stock": true,
+    "id": "9",
+    "image": "assets/4195406.jpg",
+    "desc": "A multiport hub concept for bringing your desk together."
+  }
+]

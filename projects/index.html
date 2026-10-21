@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <title>Projects | Josh Manalo</title>
+ <meta name="description" content="Explore Josh Manalo’s personal web applications, starting with Living Studio, an interactive 3D desk experience.">
+ <link rel="icon" href="../image/favicon.ico" sizes="any"/>
+ <link rel="icon" type="image/png" href="../image/favicon-32x32.png" sizes="32x32"/>
+ <link rel="apple-touch-icon" href="../image/apple-touch-icon.png"/>
+ <script src="../js/theme-preference.js"></script>
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=DM+Mono:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="../css/style.css"/>
+ <style id="theme-variables">
+/* ─── THEME VARIABLES ─── */
+[data-theme="light"] {
+ --bg:      #f0eeeb;
+ --bg2:      #e5e2de;
+ --bg3:      #dbd8d4;
+ --text:     #1a1714;
+ --muted:     #6a6560;
+ --accent:    #8b1c2a;
+ --accent-strong: #6b0f1a;
+ --accent-soft:  #a85a6a;
+ --border:    #d5d0cb;
+ --accent-text:    #8b1c2a;
+ --accent-strong-text: #6b0f1a;
+ --accent-soft-text:  #5a3a42;
+}
+[data-theme="dark"] {
+ --bg:      #0c0808;
+ --bg2:      #161010;
+ --bg3:      #201818;
+ --text:     #f0e8e0;
+ --muted:     #a89888;
+ --accent:    #c41e3a;
+ --accent-strong: #e85d75;
+ --accent-soft:  #8b1c2a;
+ --border:    #2a2020;
+ --accent-text:    #e85d75;
+ --accent-strong-text: #ff9aaa;
+ --accent-soft-text:  #c9a0a0;
+}
+[style*="color: var(--accent)"]    { color: var(--accent-text) !important; }
+[style*="color: var(--accent-strong)"] { color: var(--accent-strong-text) !important; }
+[style*="color: var(--accent-soft)"]  { color: var(--accent-soft-text) !important; }
+.text-accent { color: var(--accent-text) !important; }
+.c-section-label { color: var(--accent-text) !important; }
+.c-section-label::before { background: var(--accent-text) !important; }
+</style>
+ <link rel="stylesheet" href="../css/project-previews.css"/>
+ <link rel="stylesheet" href="../css/showcase.css"/>
+
+<link rel="stylesheet" href="../css/personal-projects.css"><script src="../js/personal-projects.js" defer></script></head>
+<body class="showcase-page personal-projects-page">
+<a class="projects-skip" href="#projects-main">Skip to projects</a>
+<header class="showcase-header"><div class="showcase-shell showcase-header-inner">
+<a class="showcase-brand" href="../index.html#home" aria-label="Josh Manalo portfolio home">Josh<span>.dev</span></a>
+<nav class="portfolio-view-tabs" aria-label="Explore Josh’s work"><a href="../showcase.html">Demos</a><a href="index.html" aria-current="page">Projects</a></nav>
+<div class="showcase-header-actions"><a class="showcase-back" href="../index.html#home">← Back<span class="showcase-back-extra"> to portfolio</span></a><button class="showcase-theme" id="projects-theme" type="button" aria-label="Switch theme"><span aria-hidden="true">☀</span></button></div>
+</div></header>
+<main id="projects-main">
+<section class="showcase-hero"><div class="showcase-shell"><p class="showcase-eyebrow">Josh Manalo / Personal projects</p><h1>A little room<br>for <em>curiosity.</em></h1><p class="showcase-intro">Interactive experiences and personal web applications. Explore a different side of my work, where code becomes something you can step into and play with.</p></div></section>
+<section class="personal-project-catalog"><div class="showcase-shell"><div class="showcase-catalog-heading"><div><h2>Step into a project.</h2><p class="showcase-catalog-subtitle">Start with the workspace we built around a familiar desk.</p></div><p class="showcase-result-count">01 personal project</p></div>
+<article class="personal-project-feature" id="living-studio"><a class="personal-project-image" href="living-studio/index.html" aria-label="Open Josh Living Studio"><img src="living-studio/assets/studio-night-v2.webp" alt="Living Studio: an interactive desk with monitors, a laptop, phone, books, and warm room lighting" width="1672" height="941"><span>Enter the studio ↗</span></a>
+<div class="personal-project-copy"><p class="showcase-card-category">Interactive web application</p><h2>Josh <br>Living Studio</h2><p>A personal workspace you can explore. Move closer to the monitor for projects, open the laptop for my portfolio, or reach for the phone to find my contact links.</p><ul class="showcase-features"><li>3D desk experience</li><li>WebGL &amp; JavaScript</li><li>Interactive objects</li></ul><a class="showcase-button showcase-button-primary" href="living-studio/index.html">Open Project <span aria-hidden="true">↗</span></a></div></article>
+<div class="personal-project-details"><div><span>01 / EXPLORE</span><h3>A desk full of things to discover.</h3><p>Click or tap the screens, books, controllers, clock, and coffee. Each object brings a little more of the workspace to life.</p></div><div><span>02 / SET THE MOOD</span><h3>Make the room feel like yours.</h3><p>Try the room light, adjust the day cycle, or pause motion. The custom opening screen welcomes you into the experience.</p></div><div><span>03 / KEEP BROWSING</span><h3>A clear way back.</h3><p>Use “Back to Projects” in the studio to return here, or explore the business website demos through the Demos tab.</p></div></div>
+</div></section>
+<section class="showcase-contact"><div class="showcase-shell showcase-contact-inner"><div><h2>Looking for a business website?</h2><p>Explore the café, store, property, and local service business demos in the Showcase.</p></div><a class="showcase-button" href="../showcase.html">Explore Demos ↗</a></div></section>
+</main><footer class="showcase-footer"><div class="showcase-shell showcase-footer-inner"><span>© 2026 Josh Michael Manalo · Personal Projects</span><a href="../index.html#home">← Back to portfolio</a></div></footer>
+</body></html>

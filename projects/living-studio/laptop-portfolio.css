@@ -1,0 +1,30 @@
+/* One live portfolio, projected onto the photographed laptop before it opens. */
+@font-face{font-family:PortfolioOrbitron;src:url('assets/orbitron-portfolio.ttf') format('truetype');font-weight:900;font-style:normal;font-display:swap}
+.laptop-website-screen{position:absolute;left:60.83%;top:31.09%;width:17.17%;height:16.2%;overflow:hidden;isolation:isolate;background:#110d10;pointer-events:none}
+.laptop-website-screen:after{content:'';position:absolute;inset:0;z-index:3;border:1px solid #03061177;background:linear-gradient(130deg,#b7c9ff09,transparent 55%);box-shadow:inset 0 0 2px #0006;pointer-events:none}
+.portfolio-live-plane{position:absolute;left:0;top:0;width:1600px;height:900px;transform-origin:0 0;visibility:hidden;overflow:hidden;background:#0d0a0b;pointer-events:none;isolation:isolate}
+.portfolio-live-plane.is-ready{visibility:visible}.portfolio-live-plane.is-interactive{pointer-events:auto}
+.portfolio-live-plane #portfolio-frame{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:1;background:#0d0a0b;border:0;transition:opacity .2s;pointer-events:none}
+.portfolio-live-plane.is-live #portfolio-frame{opacity:1}.portfolio-live-plane.is-interactive #portfolio-frame{pointer-events:auto}
+.portfolio-hero-poster{position:absolute;inset:0 auto auto 0;width:1600px;height:900px;background:radial-gradient(ellipse at 91% 45%,#590c242c,transparent 52%),#0d0a0b;color:#ede6de;overflow:hidden;transform-origin:0 0;font-family:Arial,sans-serif;pointer-events:none}
+.portfolio-live-plane.is-live .portfolio-hero-poster{visibility:hidden}
+.portfolio-hero-poster>header{display:flex;align-items:center;gap:50px;height:90px;padding:0 90px;border-bottom:1px solid #f0ddd703;background:#0c090ac4}
+.portfolio-hero-poster>header>strong{font-family:PortfolioOrbitron,Arial,sans-serif;font-size:28px;letter-spacing:-.04em;font-weight:900;color:#f26985}
+.portfolio-hero-poster>header>strong>span{color:#ac9e91}.portfolio-hero-poster>header>nav{margin:auto;font-size:15px;letter-spacing:.14em;color:#ac9e91;font-weight:600}
+.portfolio-hero-poster>header>i{display:grid;place-items:center;width:43px;height:43px;font-size:24px;font-style:normal;border:1px solid #78665745;border-radius:7px;color:#c9b9aa}
+.poster-hero{display:flex;align-items:center;justify-content:space-between;gap:76px;padding:94px 150px 55px 150px;height:810px}
+.poster-hero>section{min-width:0;flex:1;align-self:center}.poster-hero>img{display:block;width:355px;height:445px;object-fit:cover;object-position:center;border:1px solid #936f6d5c;border-radius:21px;flex-shrink:0;margin-top:65px;align-self:center}
+.poster-availability{font-size:13px;font-weight:400;letter-spacing:.17em;line-height:1.6;color:#c3a6a2;margin:0 0 30px;white-space:nowrap}
+.poster-name{font-family:PortfolioOrbitron,Arial,sans-serif;font-size:25px;font-weight:900;letter-spacing:.07em;color:#b4a698;margin:0 0 22px}
+.poster-hero h3{font-family:PortfolioOrbitron,Arial,sans-serif;font-size:106px;line-height:1.12;font-weight:900;letter-spacing:-.045em;margin:0;color:#eee7df;white-space:nowrap}
+.poster-hero h3>span{color:#ff91aa}.poster-description{font-size:16px;font-weight:400;line-height:1.8;color:#b5a79a;margin:30px 0 0}
+.poster-tags{display:flex;align-items:center;gap:9px;margin:29px 0 20px}.poster-tags>span{padding:7px 12px;font-family:Consolas,monospace;font-size:13px;color:#decdaa;background:#120b0c;border:1px solid #83162b}.poster-tags>span:nth-child(4){background:#9a1730}
+.poster-hero>section>small{display:block;font-family:Consolas,monospace;font-size:14px;letter-spacing:.01em;color:#d5c29e}
+.laptop-screen-cue{position:absolute;right:6%;bottom:9%;display:grid;place-items:center;width:1.7cqw;height:1.7cqw;border:1px solid #dae5ff73;border-radius:50%;background:#18223bc7;color:#d5e3ff;opacity:0;transition:opacity .2s}
+.laptop-screen-cue>svg{width:50%;height:50%}.laptop-hitbox:hover .laptop-screen-cue,.laptop-hitbox:focus-visible .laptop-screen-cue{opacity:1}
+#portfolio-front-host{background:radial-gradient(ellipse at 50% 50%,#24141c,#0d0b10 72%);isolation:isolate}
+#portfolio-front-host .portfolio-loading{z-index:3}#portfolio-front-host .portfolio-live-plane{z-index:1}
+.laptop-browser-actions>.portfolio-view-mode{width:auto;min-width:63px;padding:0 9px;font-size:10px;white-space:nowrap}
+.portfolio-view-mode[aria-pressed=true]{border-color:#b5ccff70;background:#b5ccff1b;color:#d3e1fc}
+@media(max-width:650px){.laptop-browser-actions>.portfolio-view-mode{min-width:58px;font-size:9px;padding:0 6px}.portfolio-sections{gap:0}.portfolio-sections>button{padding:6px 7px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.portfolio-live-plane #portfolio-frame,.laptop-screen-cue{transition:none}}

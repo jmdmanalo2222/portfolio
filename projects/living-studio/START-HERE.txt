@@ -1,0 +1,49 @@
+JOSH - LIVING STUDIO
+
+GET STARTED
+1. Extract the entire Josh-Living-Studio folder from this ZIP.
+2. Open index.html in a modern browser such as Chrome, Edge, or Firefox.
+   Keep the assets folder and all other files together.
+
+No build step or Node dependencies are required. The editable HTML, CSS,
+and JavaScript source is included.
+
+CUSTOM OPENING SCREEN
+The illustrated intro tracks room and asset readiness, then fades into the
+workspace. Use Enter now or Escape to skip it. Repeat visits are quicker,
+and your reduced-motion preference is respected.
+
+EXPLORE THE ROOM
+- Click either monitor to explore projects and the interactive desktop.
+- Click the laptop for the live portfolio, or the phone for contact links.
+- Try the keyboards, controllers, clock, books, curtains, and coffee.
+- Use Room light to illuminate the room. Room controls adjust the day cycle
+  and sound. Pause motion and viewpoint controls are also available.
+
+BROWSER AND INTERNET
+The live 3D room requires browser WebGL support; still-image fallbacks are
+included. Internet is needed for the embedded portfolio, external projects,
+social/contact links, and online inquiry delivery.
+
+OPTIONAL LOCAL SERVER
+If your browser restricts a feature when opening index.html directly, serve
+this extracted folder locally. With Python installed, open a terminal in
+this folder and run:
+
+    python -m http.server 8000
+
+On Windows you can also use: py -m http.server 8000
+Then open http://localhost:8000 in your browser.
+
+EDIT OR HOST
+- Public contact links and inquiry settings: site-config.js
+- 3D room geometry, materials, and lighting: studio-scene.js
+- Room and device appearance: studio.css (plus the other CSS files)
+- Upload this folder's contents to a static web host, with index.html at
+  the site's root. No server-side build is needed.
+
+The assets folder includes the CV, project previews, room fallback images,
+and the Orbitron font with its license notice.
+
+BUNDLED PORTFOLIO COPY
+This version lives in projects/living-studio/. The studio logo links back to the Projects page, the laptop opens the bundled main portfolio, and project links open the bundled website demos. Upload it together with the rest of portfolio-main.

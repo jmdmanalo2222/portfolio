@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#d7ceba">
+  <title>Josh  Living Studio</title>
+  <meta name="description" content="Josh Manalo’s interactive portfolio: client work, web development and SEO services, project inquiries, six demos, an arcade, and a living desk.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/studio-night-v2.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="room-life.css">
+  <link rel="stylesheet" href="workspace-business.css">
+  <link rel="stylesheet" href="laptop-portfolio.css">
+  <link rel="stylesheet" href="room-viewpoint.css">
+  <link rel="stylesheet" href="studio.css">
+  <link rel="stylesheet" href="studio-loader.css">
+  <script src="studio-loader.js"></script>
+  <script src="site-config.js" defer></script>
+  <script src="workspace-apps.js" defer></script>
+  <script src="workspace-business.js" defer></script>
+  <script src="keyboard-layout.js" defer></script>
+  <script src="workspace-keyboard.js" defer></script>
+  <script src="room-games.js" defer></script>
+  <script src="room-life.js" defer></script>
+  <script src="laptop-portfolio.js" defer></script>
+  <script src="room-depth.js" defer></script>
+  <script src="studio-scene.js" defer></script>
+  <script src="studio-viewpoint.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body class="studio-shell">
+  <dialog class="studio-loader" id="studio-loader" aria-labelledby="studio-loader-title" aria-describedby="studio-loader-status">
+    <div class="studio-loader-frame">
+      <header class="studio-loader-header"><div class="studio-loader-brand">josh.<span>A LITTLE ROOM FOR CURIOSITY</span></div><span class="studio-loader-edition">PERSONAL SPACE / 001</span></header>
+      <div class="studio-loader-center">
+        <p class="studio-loader-eyebrow"><i aria-hidden="true"></i> COME ON IN</p>
+        <h1 id="studio-loader-title" tabindex="-1" autofocus>Welcome to<br><em>my little studio.</em></h1>
+        <div class="studio-loader-art" aria-hidden="true">
+          <svg viewBox="0 0 520 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="boot-case" x1="120" y1="40" x2="300" y2="180" gradientUnits="userSpaceOnUse"><stop stop-color="#f4f0e4"/><stop offset="1" stop-color="#bbbdb0"/></linearGradient><linearGradient id="boot-desk" x1="64" y1="170" x2="460" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#d1b28d"/><stop offset="1" stop-color="#ad8762"/></linearGradient><radialGradient id="boot-glow"><stop stop-color="#d49a5e" stop-opacity=".24"/><stop offset="1" stop-color="#d49a5e" stop-opacity="0"/></radialGradient></defs>
+            <ellipse cx="265" cy="192" rx="216" ry="35" fill="url(#boot-glow)"/>
+            <path d="m66 171 329-9 62 27-331 13Z" fill="url(#boot-desk)" stroke="#9e7f60" stroke-width="1"/>
+            <path d="m126 202 331-13v5l-331 13-60-30v-6Z" fill="#ae8c67"/>
+            <path d="m91 185 1 30m333-13v19" stroke="#888e7f" stroke-width="5"/>
+            <path d="m231 132 1 32-25 4 45 6 26-7-30-5-1-31" fill="#b6b8a9" stroke="#939a8d"/>
+            <path d="m151 49 164 4v86l-164-4Z" fill="url(#boot-case)" stroke="#9da494" stroke-width="1.4"/>
+            <path d="m157 55 152 4v70l-152-4Z" fill="#252f2c"/>
+            <path d="m162 60 140 4" stroke="#e8d9bb" stroke-opacity=".08"/>
+            <rect x="212" y="76" width="39" height="25" rx="2" stroke="#c9b78e" stroke-width="1.1" transform="rotate(1.5 212 76)"/>
+            <path d="m225 105 13 .4m-6-4v4" stroke="#c9b78e"/>
+            <path d="m202 114 60 1.5" stroke="#667268" stroke-width="2"/>
+            <path class="studio-loader-screen-line" d="m202 114 60 1.5" stroke="#d6a06b" stroke-width="2" pathLength="100"/>
+            <circle class="studio-loader-led" cx="306" cy="134" r="1.5" fill="#c19354"/>
+            <path d="m331 61 49-6v102l-49 6Z" fill="url(#boot-case)" stroke="#9da494" stroke-width="1.2"/>
+            <path d="m336 67 39-5v88l-39 5Z" fill="#303c33"/>
+            <path d="m343 79 24-3m-24 9 17-2m-17 9 21-2m-21 9 13-1m-13 9 22-2" stroke="#aeb6a0" stroke-opacity=".5" stroke-width="1.5"/>
+            <path d="m352 161 1 8-18 6 39-3 8-4-23-1v-7" fill="#b5b8a9" stroke="#9da494"/>
+            <path d="m101 130 65 5 12 41-65-5Z" fill="url(#boot-case)" stroke="#929b8c"/>
+            <path d="m106 135 56 4 8 30-55-4Z" fill="#343d32"/>
+            <path d="m116 145 16 1m-13 5 28 2m-24 5 16 1" stroke="#c9b78e" stroke-opacity=".6" stroke-width="1.5"/>
+            <path d="m113 171 65 5 24 12-65-4Z" fill="#d2d0bc" stroke="#9fa58e"/>
+            <path d="m121 174 52 4 12 5-50-4Z" fill="#9ea58f"/>
+            <path d="m216 177 77-2 26 10-78 3Z" fill="#d3d4c2" stroke="#939d88"/>
+            <path d="m225 180 65-2m-57 5 63-2" stroke="#9ea68f" stroke-width="2" stroke-dasharray="3 2"/>
+            <path d="m324 177 10-1 5 5-11 1Z" fill="#d2d3c0" stroke="#9da48e"/>
+            <ellipse cx="409" cy="173" rx="15" ry="4" fill="#c7bc9d"/>
+            <path d="M408 172v-31" stroke="#8f7955" stroke-width="3"/>
+            <path d="M386 142c0-16 10-26 23-26s23 10 23 26Z" fill="#c4824f" stroke="#b07549"/>
+            <path d="M389 143h40" stroke="#ebbe82" stroke-width="2"/>
+            <ellipse class="studio-loader-lamp-glow" cx="409" cy="147" rx="31" ry="15" fill="url(#boot-glow)"/>
+            <path d="m370 180 2 8 10 .5 1-9" fill="#ede3cb" stroke="#b8af96"/>
+            <path d="m383 181 4 1-1 5-4-.5" stroke="#b8af96"/>
+            <path class="studio-loader-steam" d="M376 174c-5-5 5-6 0-12" stroke="#9e9f8b" stroke-opacity=".55" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="studio-loader-progress">
+          <div class="studio-loader-progress-label"><p id="studio-loader-status" role="status" aria-live="polite">Setting the scene…</p><span id="studio-loader-percent" aria-hidden="true">0%</span></div>
+          <div class="studio-loader-track" id="studio-loader-progress" role="progressbar" aria-label="Preparing your studio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+          <p class="studio-loader-note">A few screens. A little coffee. Plenty to explore.</p>
+        </div>
+      </div>
+      <footer class="studio-loader-footer"><span><i aria-hidden="true"></i> MADE TO BE EXPLORED</span><button id="studio-loader-skip" type="button">Enter now <span aria-hidden="true">↗</span></button></footer>
+    </div>
+  </dialog>
+  <main class="room" id="main" aria-label="Interactive workspace" tabindex="-1">
+    <h1 class="sr-only">Josh's interactive workspace</h1>
+    <div class="room-ambient" aria-hidden="true"></div>
+    <div class="room-world" id="room-world">
+      <img class="room-image" id="room-image" src="assets/studio-night-v2.webp" width="1672" height="941" alt="An angled 3D desk setup with a landscape monitor and a portrait monitor, a laptop, a phone on the left, a digital desk clock, a plain wall, a tall window with curtains on the right, a wall-mounted air conditioner, warm wood flooring, coffee, books, controllers, an orange lamp, a black gaming chair and a city skyline outside the window. The devices and objects are interactive." fetchpriority="high" decoding="async">
+      <canvas class="room-depth-canvas" id="room-depth-canvas" width="1672" height="941" aria-hidden="true"></canvas>
+      <img class="room-day-image" src="assets/studio-day-v2.webp" width="1672" height="941" alt="" aria-hidden="true" decoding="async">
+      <img class="room-light-fallback room-light-fallback-night" src="assets/studio-room-light-night.webp" width="1672" height="941" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="room-light-fallback room-light-fallback-day" src="assets/studio-room-light-day.webp" width="1672" height="941" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="room-golden-light" aria-hidden="true"></div>
+      <div class="window-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="coffee-steam" aria-hidden="true"><i></i><i></i><i></i><b>♡</b></div>
+      <time class="wall-clock" id="live-clock" role="timer" aria-live="off" aria-label="Current local time"><span class="clock-pair" id="clock-hours" aria-hidden="true">00</span><span class="clock-colon" aria-hidden="true"><i></i><i></i></span><span class="clock-pair" id="clock-minutes" aria-hidden="true">00</span><span class="clock-colon" aria-hidden="true"><i></i><i></i></span><span class="clock-pair clock-seconds" id="clock-seconds" aria-hidden="true">00</span><span class="clock-mode-label" id="clock-mode-label" aria-hidden="true">LOCAL</span></time>
+      <button class="object-hotspot studio-object" id="studio-curtain" aria-label="Close curtains" aria-pressed="false"><span id="studio-curtain-caption">Close the curtains</span></button>
+      <button class="object-hotspot clock-hotspot" id="clock-open" data-room-panel="clock" aria-label="Desk clock: choose local time, Philippine time, or date" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Time zones</span></button>
+      <button class="object-hotspot book-hotspot book-cv" data-room-panel="book" data-detail="cv" aria-label="Open background book and download Josh’s CV" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Background</span></button>
+      <button class="object-hotspot book-hotspot book-skills" data-room-panel="book" data-detail="skills" aria-label="Open the skills book" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Skills</span></button>
+      <button class="object-hotspot book-hotspot book-tools" data-room-panel="book" data-detail="tools" aria-label="Open the tools book" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Tools</span></button>
+      <button class="object-hotspot controller-hotspot controller-snake" data-room-panel="game" data-detail="snake" aria-label="Pick up the first controller and play Snake" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Snake</span></button>
+      <button class="object-hotspot controller-hotspot controller-pong" data-room-panel="game" data-detail="pong" aria-label="Pick up the second controller and play Pong" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Pong</span></button>
+      <button class="object-hotspot controller-hotspot controller-arcade" data-room-panel="game" data-detail="snake" aria-label="Pick up the third controller and open the arcade" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Arcade</span></button>
+      <button class="object-hotspot control-pad-hotspot" data-room-panel="controls" aria-label="Desk control pad: adjust day cycle, brightness, and optional sound" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><span>Room controls</span></button>
+      <button class="object-hotspot coffee-hotspot" id="coffee-open" aria-label="Take a little coffee break"><span>A little break</span></button>
+      <button class="object-hotspot studio-object" id="studio-lamp" aria-label="Turn off lamp and side glow" aria-pressed="true"><span>The warm corner<small>Switch the lamp &amp; side glow</small></span></button>
+      <button class="object-hotspot studio-object" id="studio-record" aria-label="Pause record" aria-pressed="true"><span id="studio-record-caption">Spinning, softly</span></button>
+      <button class="object-hotspot studio-object" id="studio-ac" aria-label="Turn off air conditioning" aria-pressed="true"><b class="studio-ac-readout" aria-hidden="true">22°</b><span id="studio-ac-caption">Quiet cooling<small>Click to turn off the AC</small></span></button>
+      <div class="studio-display" id="studio-display" data-monitor-origin="secondary" role="group" aria-label="Second portrait monitor">
+        <div class="studio-display-preview" aria-hidden="true"><header><span>josh.dev</span><span>SELECTED WORK / 02</span><i></i></header><section><small>CLIENT WORK</small><h2>Thoughtful websites.<br>Useful applications.</h2><div class="studio-display-cards"><article><span>01</span><strong>Web development</strong><p>Interfaces &amp; custom workflows</p><div class="display-code"><i></i><i></i><i></i><i></i></div></article><article><span>02</span><strong>Technical SEO</strong><p>Structure, clarity &amp; performance</p><div class="display-bars"><i></i><i></i><i></i><i></i><i></i></div></article></div></section><footer><i></i> Explore Client Work <span>↗</span></footer></div>
+        <button id="studio-display-open" aria-label="Face the second portrait monitor and open Client Work" aria-haspopup="dialog" aria-controls="monitor-dialog" aria-expanded="false"><span class="monitor-focus-cue" aria-hidden="true" data-icon="expand"></span></button>
+      </div>
+      <div class="monitor-desktop" id="monitor-desktop" role="group" aria-label="Main monitor desktop">
+        <div class="desktop-plane" id="desktop-plane" inert aria-hidden="true">
+          <div class="desktop-wallpaper" aria-hidden="true"></div>
+          <div class="desktop-shortcuts" id="desktop-icons" role="group" aria-label="Workspace apps and demo shortcuts"></div>
+          <section class="monitor-projects" id="monitor-content" aria-labelledby="showcase-title" hidden>
+            <div class="screen-surface" id="explorer-screen">
+              <header class="screen-toolbar"><button class="icon-button" id="shelf-home" aria-label="Show all workspace apps"><span data-icon="grid"></span></button><button class="window-drag-handle" id="window-drag-handle" aria-label="Move project window with the arrow keys, or drag" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight"><span id="window-app-icon" aria-hidden="true"></span></button><div class="window-commands"><button class="icon-button" id="minimize-project" aria-label="Minimize project window"><span data-icon="minimize"></span></button><button class="icon-button" id="maximize-project" aria-label="Maximize project window" aria-pressed="false"><span data-icon="maximize"></span></button><button class="icon-button" id="close-showcase" aria-label="Close project window"><span data-icon="close"></span></button></div></header>
+              <div class="screen-page" id="screen-page"><h2 class="sr-only" id="showcase-title" tabindex="-1">Interactive projects</h2></div>
+              <footer class="screen-controls"><span id="window-share-status" class="window-share-feedback" role="status" aria-live="polite"></span><span class="window-status" id="window-status">Apps &amp; playground</span><button class="icon-button step-button" data-step="-1" aria-label="Previous project" hidden><span data-icon="arrow-left"></span></button><div class="position-dots" id="position-dots" aria-label="Select a project"></div><button class="icon-button step-button" data-step="1" aria-label="Next project" hidden><span data-icon="arrow-right"></span></button><button class="icon-button window-share" id="window-share" aria-label="Copy a direct link to this screen" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 15 6-6M8 8l2-2a5 5 0 0 1 7 7l-2 2M16 16l-2 2a5 5 0 0 1-7-7l2-2"/></svg></button></footer>
+            </div>
+          </section>
+          <div class="desktop-taskbar" role="toolbar" aria-label="Desktop taskbar"><button class="desktop-start taskbar-button" id="monitor-open" aria-label="Open workspace apps and demos" aria-controls="monitor-content" aria-expanded="false"><span data-icon="grid"></span></button><i class="taskbar-divider" aria-hidden="true"></i><button class="taskbar-app taskbar-button" data-launch="work" aria-label="Open the Client Work folder"><span data-icon="folder"></span></button><button class="taskbar-app taskbar-button" data-launch="redesign" aria-label="Open website redesign project"><span data-icon="split"></span></button><button class="taskbar-app taskbar-button" data-launch="booking" aria-label="Open booking project"><span data-icon="calendar"></span></button><button class="taskbar-app taskbar-button" data-launch="seo" aria-label="Open SEO project"><span data-icon="search"></span></button><button class="taskbar-button taskbar-running" id="taskbar-projects" aria-label="Restore project window" aria-controls="monitor-content" aria-expanded="false" hidden><span data-icon="monitor"></span><i aria-hidden="true"></i></button><span class="taskbar-spacer" aria-hidden="true"></span><button class="taskbar-button show-desktop" id="show-desktop" aria-label="Show desktop"><span data-icon="desktop"></span></button></div>
+        </div>
+        <button class="monitor-focus" id="monitor-focus" aria-label="Move closer and face the desktop monitor" aria-haspopup="dialog" aria-controls="monitor-dialog" aria-expanded="false"><span class="monitor-focus-cue" aria-hidden="true" data-icon="expand"></span></button>
+      </div>
+      <div class="desk-keyboard-glow" id="desk-keyboard-glow"><svg id="desk-keyboard-svg" viewBox="0 0 430 155"></svg></div>
+      <button class="object-hotspot keyboard-hotspot" id="keyboard-open" tabindex="-1" aria-hidden="true" aria-label="Use the keyboard and open the interactive terminal"><span>Try the terminal</span></button>
+      <div class="laptop-keyboard-surface" id="laptop-keyboard-surface"><svg id="laptop-keyboard-svg" viewBox="0 0 430 155"></svg></div>
+      <button class="phone-hitbox device-hitbox" id="phone-open" aria-label="Face the phone and open LinkedIn, GitHub, and WhatsApp contacts" aria-haspopup="dialog" aria-controls="device-dialog" aria-expanded="false"><span class="phone-preview" aria-hidden="true"><span data-icon="linkedin"></span><span data-icon="github"></span><span data-icon="whatsapp"></span></span></button>
+      <div class="laptop-website-screen" id="laptop-website-screen" aria-hidden="true"><div class="portfolio-live-plane" id="portfolio-live-plane" aria-hidden="true" inert><div class="portfolio-hero-poster" aria-hidden="true"><header><strong>Josh<span>.dev</span></strong><nav>ABOUT &nbsp;&nbsp; SKILLS &nbsp;&nbsp; PROJECTS &nbsp;&nbsp; CV &nbsp;&nbsp; CONTACT</nav><i>☾</i></header><div class="poster-hero"><section><p class="poster-availability"> &nbsp; AVAILABLE FOR FREELANCE PROJECTS AND OPEN TO WORK</p><p class="poster-name">JOSH MICHAEL MANALO</p><h3>Freelance<br><span>Developer</span></h3><p class="poster-description">Full-stack web developer and SEO specialist building responsive,<br>reliable websites that look polished, feel intuitive, and rank well in<br>search.</p><div class="poster-tags"><span>Frontend</span><span>Backend</span><span>SEO</span><span>Freelancer</span><span>Open to projects</span></div><small>⌖ &nbsp; Based in the Philippines · Remote-ready</small></section><img src="assets/josh-portfolio-red.webp" width="550" height="683" alt="" loading="lazy" decoding="async"></div></div></div></div>
+      <button class="laptop-hitbox device-hitbox" id="laptop-open" aria-label="Face the laptop and browse the portfolio shown on its screen" aria-haspopup="dialog" aria-controls="device-dialog" aria-expanded="false"><span class="laptop-screen-cue" aria-hidden="true" data-icon="expand"></span></button>
+    </div>
+    <div class="keyboard-playbar" id="keyboard-playbar" hidden role="group" aria-label="Keyboard playground controls"></div>
+    <a class="studio-brand" href="../index.html" aria-label="Back to Projects">josh.<small>← BACK TO PROJECTS</small></a>
+    <p class="studio-overview" aria-hidden="true">DESK STUDY / 01</p>
+    <button class="studio-motion" id="studio-motion" aria-label="Pause room ambience" aria-pressed="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path class="studio-motion-pause" d="M8 7v6m4-6v6"/><path class="studio-motion-play" d="m8 6 6 4-6 4Z"/></svg><span id="studio-motion-label">PAUSE MOTION</span></button>
+    <section class="viewpoint-controls" id="viewpoint-controls" aria-label="Viewpoint controls" hidden>
+      <header><div><small>LOOK AROUND</small><h2>Viewpoint</h2></div><button id="viewpoint-close" aria-label="Close viewpoint controls">×</button></header>
+      <button class="viewpoint-switch" id="viewpoint-toggle" aria-pressed="false"><span>Look around</span><i aria-hidden="true"></i></button>
+      <p id="viewpoint-description">The camera stays still by default. Enable Look around to explore with your pointer or by dragging.</p>
+      <div class="viewpoint-pad" role="group" aria-label="Move the room viewpoint">
+        <button data-viewpoint="up" aria-label="Look up">↑</button><button data-viewpoint="left" aria-label="Look left">←</button><button data-viewpoint="center" aria-label="Center the viewpoint">◎</button><button data-viewpoint="right" aria-label="Look right">→</button><button data-viewpoint="down" aria-label="Look down">↓</button>
+      </div>
+      <label for="viewpoint-strength">Depth <output id="viewpoint-strength-value">60%</output></label><input id="viewpoint-strength" type="range" min="20" max="100" step="5" value="60">
+      <footer id="viewpoint-status" role="status" aria-live="polite">Getting the room ready…</footer>
+    </section>
+    <p class="viewpoint-hint" id="viewpoint-hint" hidden><i aria-hidden="true"></i><span>Move to look around</span><b>·</b> Click a screen to step in</p>
+    <div class="scene-vignette" aria-hidden="true"></div>
+    <div class="scene-grain" aria-hidden="true"></div>
+    <nav class="room-utility" aria-label="Room options"><button id="studio-room-light" aria-label="Turn on the room light" aria-pressed="false" aria-controls="room-world" title="Turn on the room light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 15c0-2-3-3-3-7a7 7 0 0 1 14 0c0 4-3 5-3 7v2H8Zm0 5h8m-6 3h4"/></svg><span>Room light</span></button><button id="room-viewpoint-open" aria-label="Adjust the 3D viewpoint" aria-controls="viewpoint-controls" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Zm0 9 9-4M12 12 3 8m9 4v10"/></svg><i aria-hidden="true"></i></button><button id="room-controls-open" data-room-panel="controls" aria-label="Open room lighting, day cycle, and sound controls" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></button><button id="room-explore-open" data-room-panel="explore" aria-label="Explore all interactive desk objects" aria-haspopup="dialog" aria-controls="room-dialog" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4Z"/></svg></button></nav>
+    <nav class="device-nav" aria-label="Explore the workspace"><button data-device="monitor" aria-label="Face the desktop monitor"><span data-icon="monitor"></span><em>Work</em></button><button data-device="laptop" aria-label="View the live portfolio on the laptop"><span data-icon="user"></span><em>About</em></button><button data-device="phone" aria-label="Open phone contacts"><span data-icon="phone"></span><em>Contact</em></button></nav>
+  </main>
+  <dialog id="room-dialog" aria-labelledby="room-panel-title"><article class="room-panel"><header class="room-panel-header"><div><p id="room-panel-kicker"></p><h2 id="room-panel-title" tabindex="-1"></h2></div><button class="room-panel-close" id="close-room-panel" aria-label="Close panel and return to the room"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header><div class="room-panel-body" id="room-panel-body"></div><footer class="room-panel-footer"><i aria-hidden="true"></i><span>Josh’s workspace</span><small>A little room for curiosity.</small></footer></article></dialog>
+  <dialog id="monitor-dialog" aria-labelledby="focused-monitor-title">
+    <h2 class="sr-only" id="focused-monitor-title">Interactive desktop monitor</h2>
+    <div class="front-monitor-shell"><button class="monitor-return icon-button" id="return-to-room" aria-label="Return to the room"><span data-icon="arrow-left"></span></button><div class="front-monitor-body" id="front-monitor-body"><div class="front-monitor-screen" id="front-monitor-screen"></div><i class="front-monitor-led" aria-hidden="true"></i><span class="front-monitor-stand" aria-hidden="true"></span><span class="front-monitor-foot" aria-hidden="true"></span></div></div>
+  </dialog>
+  <dialog class="device-dialog" id="device-dialog" aria-labelledby="device-title">
+    <div class="device-stage" id="device-stage"><button class="device-close icon-button" id="close-device" aria-label="Return to the room"><span data-icon="arrow-left"></span></button><article class="device-card" id="device-card"><div class="device-hardware-screen" id="device-hardware-screen"><div id="device-content"></div></div><span class="device-camera" aria-hidden="true"></span><span class="device-home-bar" aria-hidden="true"></span></article><div class="front-laptop-base" aria-hidden="true"><div class="front-laptop-keyboard"></div><div class="front-laptop-trackpad"></div></div></div>
+  </dialog>
+  <div class="sr-only" id="scene-status" role="status" aria-live="polite"></div>
+  <noscript><p class="sr-only">Enable JavaScript to explore projects, contact information, and About Me.</p></noscript>
+</body>
+</html>

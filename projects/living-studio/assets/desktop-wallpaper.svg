@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 562.5" fill="none">
+  <defs>
+    <linearGradient id="base" x1="120" y1="0" x2="1000" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#072484"/><stop offset=".5" stop-color="#091159"/><stop offset="1" stop-color="#270d68"/></linearGradient>
+    <linearGradient id="ribbon" x1="170" y1="170" x2="870" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#78adff"/><stop offset=".22" stop-color="#5e6bf5"/><stop offset=".56" stop-color="#3332bc"/><stop offset=".81" stop-color="#8d54ed"/><stop offset="1" stop-color="#d1a3ff"/></linearGradient>
+    <linearGradient id="lower" x1="270" y1="250" x2="600" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#81aeff"/><stop offset=".17" stop-color="#445fda"/><stop offset=".52" stop-color="#17257e"/><stop offset="1" stop-color="#090e37"/></linearGradient>
+    <linearGradient id="crest" x1="180" y1="250" x2="700" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#c3e4ff"/><stop offset=".5" stop-color="#a4a7ff"/><stop offset="1" stop-color="#b07bff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientTransform="translate(970 30) rotate(145) scale(450 320)" gradientUnits="userSpaceOnUse"><stop stop-color="#9a4bff" stop-opacity=".65"/><stop offset="1" stop-color="#622bff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path fill="url(#base)" d="M0 0h1000v563H0z"/>
+  <path fill="url(#light)" d="M0 0h1000v563H0z"/>
+  <path d="M140-80c90 20 103 151 197 221 106 79 198 67 273 137 78 74 129 220 302 295h216C925 390 849 205 629 168 403 130 355 43 304-80H140Z" fill="url(#ribbon)"/>
+  <path d="M-70 304c177 126 274-123 493-38 146 57 209 193 305 314H-70V304Z" fill="url(#lower)"/>
+  <path d="M-70 304c177 126 274-123 493-38 146 57 209 193 305 314" stroke="url(#crest)" stroke-width="2"/>
+  <path d="M140-80c90 20 103 151 197 221 106 79 198 67 273 137 78 74 129 220 302 295" stroke="#b2baff" stroke-opacity=".3" stroke-width="1.5"/>
+</svg>

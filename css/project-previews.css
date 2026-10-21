@@ -1,0 +1,183 @@
+.tech-stack-row{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-top:4px;
+ margin-bottom:14px;
+}
+.tech-icon{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ width:34px;
+ height:34px;
+ border-radius:10px;
+ border:1px solid rgba(196,30,58,0.18);
+ background:rgba(255,255,255,0.04);
+ overflow:hidden;
+ transition:transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.tech-icon:hover{
+ transform:translateY(-2px);
+ border-color:rgba(196,30,58,0.42);
+ background:rgba(196,30,58,0.08);
+}
+.tech-icon img{
+ width:20px;
+ height:20px;
+ object-fit:contain;
+ display:block;
+}
+.modal-actions{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ flex-wrap:wrap;
+}
+.c-btn-github{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ background:transparent;
+ color:#f0e8e0;
+ font-family:'Orbitron',sans-serif;
+ font-size:0.85rem;
+ font-weight:700;
+ padding:0.65rem 1.2rem;
+ border-radius:10px;
+ text-decoration:none;
+ border:1px solid rgba(196,30,58,0.24);
+ transition:background 0.2s, transform 0.15s, border-color 0.2s;
+}
+.c-btn-github:hover{
+ background:rgba(196,30,58,0.08);
+ border-color:rgba(196,30,58,0.42);
+ transform:translateY(-1px);
+}
+
+
+/* Project showcase cards keep their Exit control inside the viewport. */
+.project-modal {
+ --modal-gap: clamp(8px, 3vmin, 24px);
+ position: fixed;
+ inset: 0;
+ z-index: 9999;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: var(--modal-gap);
+ isolation: isolate;
+}
+.project-modal[hidden] { display: none; }
+.project-modal-backdrop {
+ position: absolute;
+ inset: 0;
+ background: rgba(0, 0, 0, 0.78);
+ backdrop-filter: blur(6px);
+ opacity: 0;
+ transition: opacity 0.26s ease;
+}
+.project-modal-card {
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ max-width: 760px;
+ max-height: calc(100vh - var(--modal-gap) * 2);
+ max-height: calc(100dvh - var(--modal-gap) * 2);
+ min-height: 0;
+ overflow: hidden;
+ border: 1px solid rgba(232, 93, 117, 0.3);
+ border-radius: 20px;
+ background: #161010;
+ color: #f0e8e0;
+ box-shadow: 0 32px 80px rgba(0, 0, 0, 0.7);
+ opacity: 0;
+ transform: translateY(16px) scale(0.98);
+ transition: transform 0.26s ease, opacity 0.26s ease;
+}
+.project-modal.is-open .project-modal-card {
+ opacity: 1;
+ transform: translateY(0) scale(1);
+}
+.project-modal.is-open .project-modal-backdrop { opacity: 1; }
+.project-modal-header,
+.project-modal-footer {
+ display: flex;
+ flex: 0 0 auto;
+ align-items: center;
+ justify-content: space-between;
+ gap: 16px;
+ padding: 16px 22px;
+ background: #1c1315;
+}
+.project-modal-header { border-bottom: 1px solid rgba(232, 93, 117, 0.18); }
+.project-modal-heading { min-width: 0; }
+.project-modal-eyebrow {
+ display: block;
+ margin-bottom: 5px;
+ color: #e5a7b2;
+ font: 10px/1.4 'DM Mono', monospace;
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+}
+.project-modal-title {
+ margin: 0;
+ color: #f0e8e0;
+ font: 700 clamp(1rem, 3.8vw, 1.3rem)/1.4 'Orbitron', sans-serif;
+ overflow-wrap: anywhere;
+}
+.project-modal-exit,
+.project-modal-return {
+ display: inline-flex;
+ flex: 0 0 auto;
+ align-items: center;
+ justify-content: center;
+ gap: 8px;
+ min-height: 44px;
+ padding: 10px 16px;
+ border: 1px solid rgba(232, 93, 117, 0.4);
+ border-radius: 10px;
+ background: rgba(196, 30, 58, 0.14);
+ color: #f0e8e0;
+ font: 700 12px/1.4 'Orbitron', sans-serif;
+ cursor: pointer;
+ transition: background 0.2s, border-color 0.2s;
+}
+.project-modal-exit:hover,
+.project-modal-return:hover {
+ background: rgba(196, 30, 58, 0.3);
+ border-color: #e85d75;
+}
+.project-modal-body {
+ min-height: 0;
+ overflow-y: auto;
+ overscroll-behavior: contain;
+ scrollbar-width: thin;
+ scrollbar-color: #8b1c2a #161010;
+}
+.project-modal-content { padding: clamp(18px, 4vw, 28px); }
+.project-modal-footer {
+ border-top: 1px solid rgba(232, 93, 117, 0.18);
+ padding-top: 12px;
+ padding-bottom: 12px;
+}
+.project-modal-hint { color: #bba5a8; font: 11px/1.5 'DM Mono', monospace; }
+.project-modal-return { background: transparent; }
+.project-modal .modal-actions > a { min-height: 44px; }
+.project-modal :focus-visible,
+.project-preview-trigger:focus-visible {
+ outline: 2px solid #e85d75;
+ outline-offset: 4px;
+}
+@media (max-width: 480px) {
+ .project-modal-header, .project-modal-footer { padding-left: 16px; padding-right: 16px; }
+ .project-modal-hint { display: none; }
+ .project-modal-footer { justify-content: flex-end; }
+ .project-modal .modal-actions > a { flex: 1 1 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .project-modal-card, .project-modal-backdrop { transition: none; }
+ .project-modal-card { transform: none; }
+}

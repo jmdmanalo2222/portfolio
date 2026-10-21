@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <title>Website Showcase | Josh Manalo</title>
+ <meta name="description" content="Explore Josh Manalo's roofing, HVAC, plumbing, restaurant, online store, and real estate website demos. Find an idea for your next business website."/>
+ <link rel="icon" href="image/favicon.ico" sizes="any"/>
+ <link rel="icon" type="image/png" href="image/favicon-32x32.png" sizes="32x32"/>
+ <link rel="apple-touch-icon" href="image/apple-touch-icon.png"/>
+ <script src="js/theme-preference.js"></script>
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;family=DM+Mono:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="css/style.css"/>
+ <style id="theme-variables">
+/* ─── THEME VARIABLES ─── */
+[data-theme="light"] {
+ --bg:      #f0eeeb;
+ --bg2:      #e5e2de;
+ --bg3:      #dbd8d4;
+ --text:     #1a1714;
+ --muted:     #6a6560;
+ --accent:    #8b1c2a;
+ --accent-strong: #6b0f1a;
+ --accent-soft:  #a85a6a;
+ --border:    #d5d0cb;
+ --accent-text:    #8b1c2a;
+ --accent-strong-text: #6b0f1a;
+ --accent-soft-text:  #5a3a42;
+}
+[data-theme="dark"] {
+ --bg:      #0c0808;
+ --bg2:      #161010;
+ --bg3:      #201818;
+ --text:     #f0e8e0;
+ --muted:     #a89888;
+ --accent:    #c41e3a;
+ --accent-strong: #e85d75;
+ --accent-soft:  #8b1c2a;
+ --border:    #2a2020;
+ --accent-text:    #e85d75;
+ --accent-strong-text: #ff9aaa;
+ --accent-soft-text:  #c9a0a0;
+}
+[style*="color: var(--accent)"]    { color: var(--accent-text) !important; }
+[style*="color: var(--accent-strong)"] { color: var(--accent-strong-text) !important; }
+[style*="color: var(--accent-soft)"]  { color: var(--accent-soft-text) !important; }
+.text-accent { color: var(--accent-text) !important; }
+.c-section-label { color: var(--accent-text) !important; }
+.c-section-label::before { background: var(--accent-text) !important; }
+</style>
+ <link rel="stylesheet" href="css/project-previews.css"/>
+ <link rel="stylesheet" href="css/showcase.css"/>
+<link rel="stylesheet" href="css/personal-projects.css">
+</head>
+<body class="showcase-page">
+ <header class="showcase-header">
+  <div class="showcase-shell showcase-header-inner">
+   <a class="showcase-brand" href="index.html#home" aria-label="Josh Manalo portfolio home">Josh<span>.dev</span></a>
+   <nav class="portfolio-view-tabs" aria-label="Explore Josh’s work"><a href="showcase.html" aria-current="page">Demos</a><a href="projects/index.html">Projects</a></nav>
+   <div class="showcase-header-actions">
+    <a class="showcase-back" href="index.html#home"><span aria-hidden="true">←</span> Back<span class="showcase-back-extra"> to portfolio</span></a>
+    <button class="showcase-theme" type="button" id="showcase-theme" aria-label="Switch to light theme"><span aria-hidden="true">☀</span></button>
+   </div>
+  </div>
+ </header>
+ <main>
+  <section class="showcase-hero" aria-labelledby="showcase-title">
+   <div class="showcase-shell showcase-hero-grid">
+    <div>
+     <p class="showcase-eyebrow">Josh Manalo / Showcase room</p>
+     <h1 id="showcase-title">Find a website style for <em>your business.</em></h1>
+     <p class="showcase-intro">Explore website demos and project types. See how your services, products, or properties could come together, then tell me what you would like to build.</p>
+     <div class="showcase-hero-buttons"><a href="#catalog" class="showcase-button showcase-button-primary">Browse the showcase <span aria-hidden="true">↓</span></a><a href="index.html#contact" class="showcase-button">Talk about your website <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <aside class="showcase-overview" aria-label="What you can explore">
+     <span class="showcase-overview-label">A starting point for your project</span>
+     <strong>6 demos.<br/>4 project types.<br/>Your own direction.</strong>
+     <p>Use an example to explain what you like. Your website can be tailored to your business, content, and goals.</p>
+     <div class="showcase-availability">Available for US &amp; worldwide projects</div>
+    </aside>
+   </div>
+  </section>
+  <section id="catalog" class="showcase-catalog" aria-labelledby="catalog-title">
+   <div class="showcase-shell">
+    <div class="showcase-catalog-heading">
+     <div><h2 id="catalog-title">What would you like to build?</h2><p class="showcase-catalog-subtitle">Choose a type, explore a demo, and picture your business here.</p></div>
+     <p class="showcase-result-count" id="showcase-result-count" role="status" aria-live="polite">6 website demos</p>
+    </div>
+    <div class="showcase-filters" role="group" aria-label="Filter by project type">
+    <button class="showcase-filter" type="button" data-filter="all" aria-pressed="true" aria-controls="showcase-grid">All project types</button>
+    <button class="showcase-filter" type="button" data-filter="service-business" aria-pressed="false" aria-controls="showcase-grid">Service businesses</button>
+    <button class="showcase-filter" type="button" data-filter="online-store" aria-pressed="false" aria-controls="showcase-grid">Online stores</button>
+    <button class="showcase-filter" type="button" data-filter="restaurant" aria-pressed="false" aria-controls="showcase-grid">Restaurants</button>
+    <button class="showcase-filter" type="button" data-filter="real-estate" aria-pressed="false" aria-controls="showcase-grid">Real estate</button>
+    </div>
+    <div id="showcase-grid" class="showcase-grid">
+
+    <article class="showcase-card showcase-business-card" id="demo-ridgeline" data-project-type="service-business">
+     <a class="showcase-preview showcase-business-preview" href="demos/ridgeline/index.html" aria-label="Explore Ridgeline Roofing Co. demo" style="--demo-brand:#193c33">
+      <img src="demos/ridgeline/img/hero.jpg" alt="Ridgeline Roofing Co. demo photography" loading="lazy"/>
+      <span class="showcase-business-brand"><strong>RIDGELINE</strong><span>Roofing website demo</span></span>
+      <span class="showcase-preview-label">Explore demo <span aria-hidden="true">↗</span></span>
+     </a>
+     <div class="showcase-card-body">
+      <span class="showcase-card-category">Local service business · Roofing</span>
+      <div class="showcase-card-title-row"><h3>Ridgeline Roofing Co.</h3><span class="showcase-kind">Demo project</span></div>
+      <p class="showcase-description">A roofing website with photo-led service sections, local coverage, and a clear path to an inspection or estimate request.</p>
+      <ul class="showcase-features"><li>Roofing services</li><li>Inspection requests</li><li>Local coverage</li></ul>
+      <div class="showcase-card-actions"><a class="showcase-button showcase-button-primary" href="demos/ridgeline/index.html">Explore Demo <span aria-hidden="true">↗</span></a><a class="showcase-interest" href="index.html?project=roofing&amp;demo=ridgeline#contact">Want a website like this? <span aria-hidden="true">→</span></a></div>
+     </div>
+    </article>
+
+    <article class="showcase-card showcase-business-card" id="demo-northline" data-project-type="service-business">
+     <a class="showcase-preview showcase-business-preview" href="demos/northline/index.html" aria-label="Explore Northline Heating & Air demo" style="--demo-brand:#14293d">
+      <img src="demos/northline/img/hero.jpg" alt="Northline Heating & Air demo photography" loading="lazy"/>
+      <span class="showcase-business-brand"><strong>NORTHLINE</strong><span>Heating & Air website demo</span></span>
+      <span class="showcase-preview-label">Explore demo <span aria-hidden="true">↗</span></span>
+     </a>
+     <div class="showcase-card-body">
+      <span class="showcase-card-category">Local service business · Heating & Air</span>
+      <div class="showcase-card-title-row"><h3>Northline Heating & Air</h3><span class="showcase-kind">Demo project</span></div>
+      <p class="showcase-description">A heating-and-air website that explains repair, replacement, and maintenance services and guides homeowners toward a service request.</p>
+      <ul class="showcase-features"><li>HVAC services</li><li>Service requests</li><li>Seasonal care</li></ul>
+      <div class="showcase-card-actions"><a class="showcase-button showcase-button-primary" href="demos/northline/index.html">Explore Demo <span aria-hidden="true">↗</span></a><a class="showcase-interest" href="index.html?project=hvac&amp;demo=northline#contact">Want a website like this? <span aria-hidden="true">→</span></a></div>
+     </div>
+    </article>
+
+    <article class="showcase-card showcase-business-card" id="demo-clearflow" data-project-type="service-business">
+     <a class="showcase-preview showcase-business-preview" href="demos/clearflow/index.html" aria-label="Explore Clearflow Plumbing demo" style="--demo-brand:#143d48">
+      <img src="demos/clearflow/img/hero.jpg" alt="Clearflow Plumbing demo photography" loading="lazy"/>
+      <span class="showcase-business-brand"><strong>CLEARFLOW</strong><span>Plumbing website demo</span></span>
+      <span class="showcase-preview-label">Explore demo <span aria-hidden="true">↗</span></span>
+     </a>
+     <div class="showcase-card-body">
+      <span class="showcase-card-category">Local service business · Plumbing</span>
+      <div class="showcase-card-title-row"><h3>Clearflow Plumbing</h3><span class="showcase-kind">Demo project</span></div>
+      <p class="showcase-description">A plumbing website with clear service options, real photography, and a straightforward quote request experience for homeowners.</p>
+      <ul class="showcase-features"><li>Plumbing services</li><li>Quote requests</li><li>Service areas</li></ul>
+      <div class="showcase-card-actions"><a class="showcase-button showcase-button-primary" href="demos/clearflow/index.html">Explore Demo <span aria-hidden="true">↗</span></a><a class="showcase-interest" href="index.html?project=plumbing&amp;demo=clearflow#contact">Want a website like this? <span aria-hidden="true">→</span></a></div>
+     </div>
+    </article>
+
+    <article class="showcase-card" id="demo-kape-ni-lola" data-project-type="restaurant">
+     <button type="button" class="showcase-preview project-preview-trigger" onclick="openKapeModal(this)" aria-haspopup="dialog" aria-controls="kape-modal" aria-label="Preview Kape Ni Lola">
+      <img class="showcase-image-backdrop" src="image/kape-ni-lola-updated-preview.svg" alt="" aria-hidden="true" loading="lazy"/>
+      <img src="image/kape-ni-lola-updated-preview.svg" alt="Kape Ni Lola website preview" loading="lazy"/>
+      <span class="showcase-preview-label">Explore demo <span aria-hidden="true">↗</span></span>
+     </button>
+     <div class="showcase-card-body">
+      <span class="showcase-card-category">Restaurant website</span>
+      <div class="showcase-card-title-row"><h3>Kape Ni Lola</h3><span class="showcase-kind">Demo project</span></div>
+      <p class="showcase-description">A warm café website with a filterable menu, real photography, a photo viewer, and reservation and contact previews.</p>
+      <ul class="showcase-features"><li>Menu showcase</li><li>Gallery</li><li>Reservation layout</li></ul>
+      <div class="showcase-card-actions">
+       <button type="button" class="showcase-button project-preview-trigger" onclick="openKapeModal(this)" aria-haspopup="dialog" aria-controls="kape-modal">Preview details <span aria-hidden="true">↗</span></button>
+       <a class="showcase-interest" href="index.html?project=restaurant&amp;demo=kape-ni-lola#contact">I want something like this <span aria-hidden="true">→</span></a>
+      </div>
+     </div>
+    </article>
+
+    <article class="showcase-card" id="demo-bytestore" data-project-type="online-store">
+     <button type="button" class="showcase-preview project-preview-trigger" onclick="openByteModal(this)" aria-haspopup="dialog" aria-controls="byte-modal" aria-label="Preview ByteStore">
+      <img class="showcase-image-backdrop" src="image/bytestore-updated-preview.svg" alt="" aria-hidden="true" loading="lazy"/>
+      <img src="image/bytestore-updated-preview.svg" alt="ByteStore website preview" loading="lazy"/>
+      <span class="showcase-preview-label">Explore demo <span aria-hidden="true">↗</span></span>
+     </button>
+     <div class="showcase-card-body">
+      <span class="showcase-card-category">Online store</span>
+      <div class="showcase-card-title-row"><h3>ByteStore</h3><span class="showcase-kind">Demo project</span></div>
+      <p class="showcase-description">A tech store demo with product search, category filters, product details, a local cart, and a complete checkout preview.</p>
+      <ul class="showcase-features"><li>Product listings</li><li>Cart interface</li><li>Checkout preview</li></ul>
+      <div class="showcase-card-actions">
+       <button type="button" class="showcase-button project-preview-trigger" onclick="openByteModal(this)" aria-haspopup="dialog" aria-controls="byte-modal">Preview details <span aria-hidden="true">↗</span></button>
+       <a class="showcase-interest" href="index.html?project=online-store&amp;demo=bytestore#contact">I want something like this <span aria-hidden="true">→</span></a>
+      </div>
+     </div>
+    </article>
+
+    <article class="showcase-card" id="demo-primeestates" data-project-type="real-estate">
+     <button type="button" class="showcase-preview project-preview-trigger" onclick="openPrimeModal(this)" aria-haspopup="dialog" aria-controls="prime-modal" aria-label="Preview PrimeEstates">
+      <img class="showcase-image-backdrop" src="image/primeestates-updated-preview.svg" alt="" aria-hidden="true" loading="lazy"/>
+      <img src="image/primeestates-updated-preview.svg" alt="PrimeEstates website preview" loading="lazy"/>
+      <span class="showcase-preview-label">Explore demo <span aria-hidden="true">↗</span></span>
+     </button>
+     <div class="showcase-card-body">
+      <span class="showcase-card-category">Real estate website</span>
+      <div class="showcase-card-title-row"><h3>PrimeEstates</h3><span class="showcase-kind">Demo project</span></div>
+      <p class="showcase-description">A real estate concept with searchable listings, saved homes, property previews, and a viewing request flow.</p>
+      <ul class="showcase-features"><li>Property listings</li><li>Photo galleries</li><li>Inquiry layout</li></ul>
+      <div class="showcase-card-actions">
+       <button type="button" class="showcase-button project-preview-trigger" onclick="openPrimeModal(this)" aria-haspopup="dialog" aria-controls="prime-modal">Preview details <span aria-hidden="true">↗</span></button>
+       <a class="showcase-interest" href="index.html?project=real-estate&amp;demo=primeestates#contact">I want something like this <span aria-hidden="true">→</span></a>
+      </div>
+     </div>
+    </article>
+
+    </div>
+    <p class="showcase-demo-note">Demo projects illustrate website design and interface ideas. Their sample businesses, reservations, checkout, and inquiry features are for demonstration purposes. The roofing, HVAC, and plumbing demos use fictional businesses and illustrative content.</p>
+   </div>
+  </section>
+  <section class="showcase-process" aria-labelledby="showcase-process-title">
+   <div class="showcase-shell">
+    <p class="showcase-eyebrow">From idea to your website</p>
+    <h2 id="showcase-process-title">Make the example your own.</h2>
+    <div class="showcase-steps">
+     <div class="showcase-step"><span class="showcase-step-number">01 / Explore</span><h3>Choose a direction</h3><p>Pick a project type or point to a demo you like. Tell me about your business and the customers you want to reach.</p></div>
+     <div class="showcase-step"><span class="showcase-step-number">02 / Plan</span><h3>Define the details</h3><p>We can discuss your pages, content, features, and the actions visitors should take before agreeing on the scope.</p></div>
+     <div class="showcase-step"><span class="showcase-step-number">03 / Build</span><h3>Bring it together</h3><p>The design and functionality are developed around your project, with attention to mobile use, performance, and technical SEO.</p></div>
+    </div>
+   </div>
+  </section>
+  <section class="showcase-contact" aria-labelledby="showcase-contact-title">
+   <div class="showcase-shell showcase-contact-inner">
+    <div><h2 id="showcase-contact-title">Have a different idea?</h2><p>Share what you have in mind. We can discuss the features and website structure that would suit your business.</p></div>
+    <a class="showcase-button showcase-button-primary" href="index.html#contact">Tell me about your project <span aria-hidden="true">↗</span></a>
+   </div>
+  </section>
+ </main>
+ <footer class="showcase-footer"><div class="showcase-shell showcase-footer-inner"><span>© 2026 Josh Michael Manalo · Website Showcase</span><a href="index.html#home">← Back to portfolio</a></div></footer>
+ <!-- ===== KAPE NI LOLA MODAL ===== -->
+ <div id="kape-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="kape-modal-title" aria-hidden="true" hidden>
+
+  <div class="project-modal-backdrop" aria-hidden="true"></div>
+
+  <div id="kape-modal-box" class="project-modal-card">
+
+   <header class="project-modal-header">
+    <div class="project-modal-heading">
+     <span class="project-modal-eyebrow">Project showcase</span>
+     <h2 id="kape-modal-title" class="project-modal-title">Kape Ni Lola</h2>
+    </div>
+    <button type="button" class="project-modal-exit" data-project-close aria-label="Exit Kape Ni Lola project preview">Exit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+   </header>
+
+   <div class="project-modal-body">
+
+   <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#1a1212; position:relative;">
+    <img src="image/kape-ni-lola-updated-preview.svg" aria-hidden="true"
+     style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
+    <img id="kape-modal-img" src="image/kape-ni-lola-updated-preview.svg" alt="Kape Ni Lola Preview"
+     style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; display:block;">
+   </div>
+
+   <div class="project-modal-content">
+    <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+     <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
+     Demo Project
+    </span>
+
+    <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+     <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
+      <strong style="color:#e85d75;">Heads up </strong> this is a front-end demo project built for portfolio purposes. It is not a real business. Menu filters and the photo gallery work; reservation and contact forms show preview confirmations without sending details.
+     </p>
+    </div>
+
+    <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A modern Filipino cafe website featuring a multi-page layout with menu showcase, gallery, reservation form, and smooth animations built with HTML, CSS, and vanilla JavaScript.</p>
+
+    <div class="tech-stack-row" aria-label="Kape Ni Lola tech stack">
+     <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html " alt="HTML5 icon"></span>
+     <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css " alt="CSS3 icon"></span>
+     <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js " alt="JavaScript icon"></span>
+    </div>
+
+    <div class="modal-actions">
+     <a href="demos/kape-ni-lola/index.html"
+      style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+      onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)';"
+      onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)';">
+      Explore Demo
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+     </a>
+
+     <a href="https://github.com/jmdmanalo2222 " target="_blank" rel="noopener" class="c-btn-github">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      View GitHub
+     </a>
+
+     <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
+    </div>
+   </div>
+   </div>
+   <footer class="project-modal-footer">
+    <span class="project-modal-hint">Press Esc or click outside to close</span>
+    <button type="button" class="project-modal-return" data-project-close>Back to demos</button>
+   </footer>
+  </div>
+ </div>
+
+ <!-- ===== BYTESTORE MODAL ===== -->
+<div id="byte-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="byte-modal-title" aria-hidden="true" hidden>
+
+ <div class="project-modal-backdrop" aria-hidden="true"></div>
+
+ <div id="byte-modal-box" class="project-modal-card">
+
+  <header class="project-modal-header">
+    <div class="project-modal-heading">
+     <span class="project-modal-eyebrow">Project showcase</span>
+     <h2 id="byte-modal-title" class="project-modal-title">ByteStore</h2>
+    </div>
+    <button type="button" class="project-modal-exit" data-project-close aria-label="Exit ByteStore project preview">Exit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+   </header>
+
+   <div class="project-modal-body">
+
+  <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0f0a0a; position:relative;">
+   <img src="image/bytestore-updated-preview.svg" aria-hidden="true"
+    style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5; display:block;">
+   <img src="image/bytestore-updated-preview.svg" alt="ByteStore Preview"
+    style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center; display:block;">
+  </div>
+
+  <div class="project-modal-content">
+   <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
+    Demo Project
+   </span>
+
+   <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+    <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
+     <strong style="color:#e85d75;">Heads up </strong> this is a front-end demo project built for portfolio purposes. It is not a real business. Product browsing and the local cart work; checkout is a preview with no real purchases or payments.
+    </p>
+   </div>
+
+   <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A tech store demo with nine sample products, search and category filters, individual product pages, a local cart with quantities and discounts, and a checkout preview.</p>
+
+   <div class="tech-stack-row" aria-label="ByteStore tech stack">
+    <span class="tech-icon" title="PHP"><img src="https://skillicons.dev/icons?i=php " alt="PHP icon"></span>
+    <span class="tech-icon" title="MySQL"><img src="https://skillicons.dev/icons?i=mysql " alt="MySQL icon"></span>
+    <span class="tech-icon" title="Tailwind CSS"><img src="https://skillicons.dev/icons?i=tailwind " alt="Tailwind CSS icon"></span>
+   </div>
+
+   <div class="modal-actions">
+    <a href="demos/bytestore/index.html"
+     style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+     onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
+     onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
+     Explore Demo
+     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+    </a>
+
+    <a href="https://github.com/jmdmanalo2222 " target="_blank" rel="noopener" class="c-btn-github">
+     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+     View GitHub
+    </a>
+
+    <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">PHP &middot; MySQL &middot; Tailwind</span>
+   </div>
+   </div>
+   </div>
+   <footer class="project-modal-footer">
+    <span class="project-modal-hint">Press Esc or click outside to close</span>
+    <button type="button" class="project-modal-return" data-project-close>Back to demos</button>
+   </footer>
+  </div>
+ </div>
+
+ <!-- ===== PRIMEESTATES MODAL ===== -->
+ <div id="prime-modal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="prime-modal-title" aria-hidden="true" hidden>
+
+  <div class="project-modal-backdrop" aria-hidden="true"></div>
+
+  <div id="prime-modal-box" class="project-modal-card">
+
+   <header class="project-modal-header">
+    <div class="project-modal-heading">
+     <span class="project-modal-eyebrow">Project showcase</span>
+     <h2 id="prime-modal-title" class="project-modal-title">PrimeEstates</h2>
+    </div>
+    <button type="button" class="project-modal-exit" data-project-close aria-label="Exit PrimeEstates project preview">Exit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+   </header>
+
+   <div class="project-modal-body">
+
+   <div style="width:100%; aspect-ratio:16/9; overflow:hidden; background:#0c0808; position:relative;">
+    <img src="image/primeestates-updated-preview.svg" aria-hidden="true"
+     style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(8px); transform:scale(1.08); opacity:0.5;">
+    <img src="image/primeestates-updated-preview.svg" alt="PrimeEstates Preview"
+     style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; object-position:center;">
+   </div>
+
+   <div class="project-modal-content">
+    <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#c41e3a; background:rgba(196,30,58,0.12); border:1px solid rgba(196,30,58,0.28); border-radius:999px; padding:4px 12px; margin-bottom:1rem;">
+     <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 2a8 8 0 100 16A8 8 0 0012 4zm-.5 4h1v5h-1zm0 6h1v1.5h-1z"/></svg>
+     Demo Project
+    </span>
+
+    <div style="background:rgba(196,30,58,0.06); border-left:3px solid rgba(196,30,58,0.45); border-radius:0 10px 10px 0; padding:0.85rem 1.1rem; margin-bottom:1.2rem;">
+     <p style="font-size:0.82rem; line-height:1.65; color:#a89888; margin:0;">
+      <strong style="color:#e85d75;">Heads up </strong> this is a portfolio demo project built to showcase a clean real estate layout and browsing experience. It is not a live property marketplace and its listings and inquiry flows are for presentation purposes.
+     </p>
+    </div>
+
+    <p style="font-size:0.88rem; line-height:1.7; color:#a89888; margin:0 0 1rem;">A photo-led real estate concept with property search, price and listing filters, saved homes, detailed property previews, and viewing inquiries.</p>
+
+    <div class="tech-stack-row" aria-label="PrimeEstates tech stack">
+     <span class="tech-icon" title="HTML5"><img src="https://skillicons.dev/icons?i=html " alt="HTML5 icon"></span>
+     <span class="tech-icon" title="CSS3"><img src="https://skillicons.dev/icons?i=css " alt="CSS3 icon"></span>
+     <span class="tech-icon" title="JavaScript"><img src="https://skillicons.dev/icons?i=js " alt="JavaScript icon"></span>
+    </div>
+
+    <div class="modal-actions">
+     <a href="demos/primeestates/index.html"
+      style="display:inline-flex; align-items:center; gap:8px; background:#c41e3a; color:#f0e8e0; font-family:'Orbitron',sans-serif; font-size:0.85rem; font-weight:700; padding:0.65rem 1.4rem; border-radius:10px; text-decoration:none; transition:background 0.2s, transform 0.15s; border:none;"
+      onmouseover="this.style.background='#e85d75'; this.style.transform='translateY(-1px)'"
+      onmouseout="this.style.background='#c41e3a'; this.style.transform='translateY(0)'">
+      Explore Demo
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+     </a>
+
+     <a href="https://github.com/jmdmanalo2222 " target="_blank" rel="noopener" class="c-btn-github">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      View GitHub
+     </a>
+
+     <span style="font-size:0.72rem; color:#6a5555; font-family:'DM Mono',monospace;">HTML &middot; CSS &middot; JavaScript</span>
+    </div>
+   </div>
+   </div>
+   <footer class="project-modal-footer">
+    <span class="project-modal-hint">Press Esc or click outside to close</span>
+    <button type="button" class="project-modal-return" data-project-close>Back to demos</button>
+   </footer>
+  </div>
+ </div>
+
+ 
+
+ <script src="js/project-previews.js"></script>
+ <script src="js/showcase.js"></script>
+</body>
+</html>
